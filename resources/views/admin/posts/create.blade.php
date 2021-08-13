@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting heading="Publish New Post">
+    <x-setting heading="Aggiungi un nuovo strumento">
         <form method="POST" action="/admin/posts" enctype="multipart/form-data">
             @csrf
 
@@ -24,7 +24,7 @@
                 <x-form.error name="category"/>
             </x-form.field>
 
-            <x-form.button>Publish</x-form.button>
+            <x-form.button>Pubblica</x-form.button>
         </form>
     </x-setting>
 </x-layout>

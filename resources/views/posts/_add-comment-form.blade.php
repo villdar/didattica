@@ -10,7 +10,7 @@
                      height="40"
                      class="rounded-full">
 
-                <h2 class="ml-4">Want to participate?</h2>
+                <h2 class="ml-4">Vuoi partecipare?</h2>
             </header>
 
             <div class="mt-6">
@@ -18,7 +18,7 @@
                     name="body"
                     class="w-full text-sm focus:outline-none focus:ring"
                     rows="5"
-                    placeholder="Quick, thing of something to say!"
+                    placeholder="Veloce! Pensa a qualcosa da dire."
                     required></textarea>
 
                 @error('body')
@@ -27,13 +27,13 @@
             </div>
 
             <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
-                <x-form.button>Submit</x-form.button>
+                <x-form.button>Invia</x-form.button>
             </div>
         </form>
     </x-panel>
 @else
     <p class="font-semibold">
-        <a href="/register" class="hover:underline">Register</a> or
-        <a href="/login" class="hover:underline">log in</a> to leave a comment.
+        <a href="/register" class="hover:underline">Registrati</a> or
+        <a href="/login" class="hover:underline">Accedi</a> per lasciare un commento.
     </p>
 @endauth

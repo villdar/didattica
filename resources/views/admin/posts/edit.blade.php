@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting :heading="'Edit Post: ' . $post->title">
+    <x-setting :heading="'Modifica strumento: ' . $post->title">
         <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
@@ -33,7 +33,7 @@
                 <x-form.error name="category"/>
             </x-form.field>
 
-            <x-form.button>Update</x-form.button>
+            <x-form.button>Aggiorna</x-form.button>
         </form>
     </x-setting>
 </x-layout>
