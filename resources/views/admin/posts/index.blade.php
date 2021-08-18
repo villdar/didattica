@@ -21,15 +21,12 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                             <a href="/admin/posts/{{ $post->id }}/edit" class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-blue-400 hover:text-blue-600">Modifica</a>
                                         </td>
-
                                         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
-                                            <form method="POST" action="/admin/posts/{{ $post->id }}">
-                                                @csrf
-                                                @method('DELETE')
-
-                                                <button class="block px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-red-400 hover:text-red-600">Cancella</button>
-                                            </form>
+                                            <x-button class="bg-red-400 hover:bg-red-500" wire:click="confirmDelete({{ $post->id }})">
+                                                Cancella ordine
+                                            </x-button>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -38,5 +35,19 @@
                 </div>
             </div>
         </div>
+        <form wire:submit.prevent="delete">
+            <x-confirmation-modal wire:model.defer="showDeleteItemModal">
+                <x-slot name="title">
+                    Eliminare l'articolo?
+                </x-slot>
+                <x-slot name="body">
+                    Continuando cancellerai l'articolo.
+                </x-slot>
+                <x-slot name="footer">
+                    <x-button class="bg-gray-500 hover:bg-gray-400" wire:click="$set('showDeleteItemModal', false)">Annulla</x-button>
+                    <x-button type="submit" class="bg-red-400 hover:bg-red-500">Continua</x-button>
+                </x-slot>
+            </x-confirmation-modal>
+        </form>
     </x-setting>
 </x-layout>
