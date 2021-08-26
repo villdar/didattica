@@ -3,7 +3,7 @@
 <x-form.field>
     <x-form.label name="{{ $name }}"/>
 
-    <input class="border border-gray-200 p-2 w-full rounded"
+    <input class="border border-gray-200 p-2 w-10/12 rounded px-8"
            name="{{ $name }}"
            id="{{ $name }}"
            {{ $attributes(['value' => old($name)]) }}
