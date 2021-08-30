@@ -23,10 +23,10 @@ class AdminPostController extends Controller
     {
         Post::create(array_merge($this->validatePost(), [
             'user_id' => request()->user()->id,
-            'thumbnail' => request()->file('thumbnail')->store('thumbnails')
+            'thumbnail' => request()->file('thumbnail')->store('thumbnails'),
         ]));
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Nuovo strumento aggiunto!');
     }
 
     public function edit(Post $post)
@@ -44,14 +44,14 @@ class AdminPostController extends Controller
 
         $post->update($attributes);
 
-        return back()->with('success', 'Post Updated!');
+        return back()->with('success', 'Strumento modificato!');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
 
-        return back()->with('success', 'Post Deleted!');
+        return back()->with('success', 'Strumento cancellato!');
     }
 
     protected function validatePost(?Post $post = null): array

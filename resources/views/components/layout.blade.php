@@ -7,6 +7,7 @@
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <script src="https://d3js.org/d3.v4.js"></script>
 
+
 <style>
     html {
         scroll-behavior: smooth;
@@ -21,6 +22,7 @@
     .clamp.one-line {
         -webkit-line-clamp: 1;
     }
+
 </style>
 
 <body style="font-family: Open Sans, sans-serif">
@@ -42,26 +44,23 @@
                         </x-slot>
 
                         @admin
-                            <x-dropdown-item
-                                href="/admin/posts"
-                                :active="request()->is('admin/posts')"
-                            >
-                                Dashboard
-                            </x-dropdown-item>
+                        <x-dropdown-item
+                                         href="/admin/posts"
+                                         :active="request()->is('admin/posts')">
+                            Dashboard
+                        </x-dropdown-item>
 
-                            <x-dropdown-item
-                                href="/admin/posts/create"
-                                :active="request()->is('admin/posts/create')"
-                            >
-                                Nuovo strumento
-                            </x-dropdown-item>
+                        <x-dropdown-item
+                                         href="/admin/posts/create"
+                                         :active="request()->is('admin/posts/create')">
+                            Nuovo strumento
+                        </x-dropdown-item>
                         @endadmin
 
                         <x-dropdown-item
-                            href="#"
-                            x-data="{}"
-                            @click.prevent="document.querySelector('#logout-form').submit()"
-                        >
+                                         href="#"
+                                         x-data="{}"
+                                         @click.prevent="document.querySelector('#logout-form').submit()">
                             Log Out
                         </x-dropdown-item>
 
@@ -91,8 +90,7 @@
         {{ $slot }}
 
         <footer id="newsletter"
-                class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16"
-        >
+                class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
             <h5 class="text-3xl">Rimani aggiornato sui nuovi strumenti per la didattica.</h5>
             <p class="text-sm mt-3">Promettiamo di non intasarti la mail con spam :)</p>
 
@@ -121,8 +119,7 @@
                         </div>
 
                         <button type="submit"
-                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
-                        >
+                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8">
                             Iscriviti
                         </button>
                     </form>
@@ -131,95 +128,97 @@
         </footer>
     </section>
 
-    <x-flash/>
+    <x-flash />
 </body>
 
 <script>
+    // create the svg area
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", 500)
+        .attr("height", 500)
+        .append("g")
+        .attr("transform", "translate(250,250)")
 
-// create the svg area
-var svg = d3.select("#my_dataviz")
-  .append("svg")
-    .attr("width", 500)
-    .attr("height", 500)
-  .append("g")
-    .attr("transform", "translate(250,250)")
+    // create a matrix
+    var matrix = [
+        [11975, 5871, 8916, 2868],
+        [1951, 10048, 2060, 6171],
+        [8010, 16145, 8090, 8045],
+        [1013, 990, 940, 6907]
+    ];
+    var names = ["A", "B", "C", "D"]
 
-// create a matrix
-var matrix = [
-  [11975,  5871, 8916, 2868],
-  [ 1951, 10048, 2060, 6171],
-  [ 8010, 16145, 8090, 8045],
-  [ 1013,   990,  940, 6907]
-];
-var names = ["A", "B", "C", "D"]
+    // give this matrix to d3.chord(): it will calculates all the info we need to draw arc and ribbon
+    var res = d3.chord()
+        .padAngle(0.05)
+        .sortSubgroups(d3.descending)
+        (matrix)
 
-// give this matrix to d3.chord(): it will calculates all the info we need to draw arc and ribbon
-var res = d3.chord()
-    .padAngle(0.05)
-    .sortSubgroups(d3.descending)
-    (matrix)
+    // add the groups on the inner part of the circle
+    svg
+        .datum(res)
+        .append("g")
+        .selectAll("g")
+        .data(function(d) {
+            return d.groups;
+        })
+        .enter()
+        .append("g")
+        .append("path")
+        .style("fill", "grey")
+        .style("stroke", "black")
+        .attr("d", d3.arc()
+            .innerRadius(230)
+            .outerRadius(240)
+        )
 
-// add the groups on the inner part of the circle
-svg
-  .datum(res)
-  .append("g")
-  .selectAll("g")
-  .data(function(d) { return d.groups; })
-  .enter()
-  .append("g")
-  .append("path")
-    .style("fill", "grey")
-    .style("stroke", "black")
-    .attr("d", d3.arc()
-      .innerRadius(230)
-      .outerRadius(240)
-    )
+    // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
+    // Its opacity is set to 0: we don't see it by default.
+    var tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "1px")
+        .style("border-radius", "5px")
+        .style("padding", "10px")
 
-// Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
-// Its opacity is set to 0: we don't see it by default.
-var tooltip = d3.select("#my_dataviz")
-  .append("div")
-  .style("opacity", 0)
-  .attr("class", "tooltip")
-  .style("background-color", "white")
-  .style("border", "solid")
-  .style("border-width", "1px")
-  .style("border-radius", "5px")
-  .style("padding", "10px")
+    // A function that change this tooltip when the user hover a point.
+    // Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
+    var showTooltip = function(d) {
+        tooltip
+            .style("opacity", 1)
+            .html("Source: " + names[d.source.index] + "<br>Target: " + names[d.target.index])
+            .style("left", (d3.event.pageX + 15) + "px")
+            .style("top", (d3.event.pageY - 28) + "px")
+    }
 
-// A function that change this tooltip when the user hover a point.
-// Its opacity is set to 1: we can now see it. Plus it set the text and position of tooltip depending on the datapoint (d)
-var showTooltip = function(d) {
-  tooltip
-    .style("opacity", 1)
-    .html("Source: " + names[d.source.index] + "<br>Target: " + names[d.target.index])
-    .style("left", (d3.event.pageX + 15) + "px")
-    .style("top", (d3.event.pageY - 28) + "px")
-}
+    // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+    var hideTooltip = function(d) {
+        tooltip
+            .transition()
+            .duration(1000)
+            .style("opacity", 0)
+    }
 
-// A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
-var hideTooltip = function(d) {
-  tooltip
-    .transition()
-    .duration(1000)
-    .style("opacity", 0)
-}
-
-// Add the links between groups
-svg
-  .datum(res)
-  .append("g")
-  .selectAll("path")
-  .data(function(d) { return d; })
-  .enter()
-  .append("path")
-    .attr("d", d3.ribbon()
-      .radius(220)
-    )
-    .style("fill", "#69b3a2")
-    .style("stroke", "black")
-  .on("mouseover", showTooltip )
-  .on("mouseleave", hideTooltip )
-  .on("click", console.log('ciao'))
-
+    // Add the links between groups
+    svg
+        .datum(res)
+        .append("g")
+        .selectAll("path")
+        .data(function(d) {
+            return d;
+        })
+        .enter()
+        .append("path")
+        .attr("d", d3.ribbon()
+            .radius(220)
+        )
+        .style("fill", "#69b3a2")
+        .style("stroke", "black")
+        .on("mouseover", showTooltip)
+        .on("mouseleave", hideTooltip)
+        .on("click", console.log('ciao'))
 </script>

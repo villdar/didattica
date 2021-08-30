@@ -16,7 +16,8 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "mailchimp/marketing": "^3.0",
-        "spatie/yaml-front-matter": "^2.0"
+        "spatie/yaml-front-matter": "^2.0",
+        "te7a-houdini/laravel-trix": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
