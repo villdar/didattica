@@ -15,11 +15,11 @@
                 if (opening) {
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
-                    container.classList.remove('translate-x-full', 'opacity-0');
-                    container.classList.add('translate-x-0', 'opacity-100');
+                    container.classList.remove('-translate-x-full', 'opacity-0');
+                    container.classList.add('translate-x-80', 'opacity-100');
                 } else {
-                    container.classList.remove('translate-x-0', 'opacity-100');
-                    container.classList.add('translate-x-full', 'opacity-0');
+                    container.classList.remove('translate-x-80', 'opacity-100');
+                    container.classList.add('-translate-x-full', 'opacity-0');
                 }
             });
 
@@ -54,7 +54,7 @@
                         const response = await errorResponse.json();
 
                         errorMessage.style.display = 'block';
-                        errorMessage.innerHTML = response.message || 'Something went wrong.';
+                        errorMessage.innerHTML = response.message || 'Qualcosa è andato storto.';
                     });
             });
     }

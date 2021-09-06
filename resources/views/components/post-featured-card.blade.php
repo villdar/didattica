@@ -1,7 +1,7 @@
 @props(['post'])
 
 <div x-data="{ show: true }" @click.away="show = true" class="block">
-    <div class="lg:hidden">
+    <div class="z-50 lg:z-0 lg:hidden">
         <x-toggle class="lg:hidden">
             Grafico
         </x-toggle>
