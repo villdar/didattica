@@ -2,12 +2,15 @@
     <x-setting heading="Aggiungi un nuovo strumento">
         <form method="POST" action="/admin/posts" enctype="multipart/form-data">
             @csrf
+            @method('POST')
 
             <x-form.input name="title" required />
             <x-form.input name="slug" required />
             <x-form.input name="thumbnail" type="file" required />
             <x-form.textarea name="excerpt" required />
-            <x-form.textarea name="body" required />
+            <div>
+                <x-form.edit.editor class="description" name="body"></x-form.edit.editor>
+            </div>
 
             <x-form.field>
                 <x-form.label name="category"/>

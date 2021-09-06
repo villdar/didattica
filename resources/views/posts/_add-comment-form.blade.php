@@ -16,7 +16,7 @@
             <div class="mt-6">
                 <textarea
                     name="body"
-                    class="w-full text-sm focus:outline-none focus:ring"
+                    class="w-full text-sm focus:outline-none focus:ring p-4"
                     rows="5"
                     placeholder="Veloce! Pensa a qualcosa da dire."
                     required></textarea>
@@ -26,14 +26,14 @@
                 @enderror
             </div>
 
-            <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
+            <div class="flex justify-end mt-2 pt-4 border-t border-gray-200">
                 <x-form.button>Invia</x-form.button>
             </div>
         </form>
     </x-panel>
 @else
     <p class="font-semibold">
-        <a href="/register" class="hover:underline">Registrati</a> or
+        <a href="/register" class="hover:underline">Registrati</a> oppure
         <a href="/login" class="hover:underline">Accedi</a> per lasciare un commento.
     </p>
 @endauth

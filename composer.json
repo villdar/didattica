@@ -12,10 +12,13 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "hisorange/browser-detect": "^4.4",
         "itsgoingd/clockwork": "^5.0",
+        "jenssegers/agent": "^2.6",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "mailchimp/marketing": "^3.0",
+        "spatie/laravel-support-bubble": "^1.0",
         "spatie/yaml-front-matter": "^2.0",
         "te7a-houdini/laravel-trix": "dev-master"
     },

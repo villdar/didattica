@@ -18,7 +18,7 @@
                                             </div>
                                         </td>
 
-                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                        <td class="px-4 py-4 whitespace-nowrap text-center text-sm font-medium">
                                             <div x-data="{ isEditModalVisible: false}">
                                                 <x-button @click="isEditModalVisible = true" class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-blue-400 hover:text-blue-600">
                                                     Modifica
@@ -45,19 +45,21 @@
                                                                 @csrf
                                                                 @method('PATCH')
 
-                                                                <x-form.input name="title" :value="old('title', $post->title)" required />
-                                                                <x-form.input name="slug" :value="old('slug', $post->slug)" required />
+                                                                <x-form.edit.input name="title" :value="old('title', $post->title)" required />
+                                                                <x-form.edit.input name="slug" :value="old('slug', $post->slug)" required />
 
                                                                 <div class="flex mt-6 px-4 mr-6">
                                                                     <div class="flex-1 w-2/12">
-                                                                        <x-form.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
+                                                                        <x-form.edit.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
                                                                     </div>
 
                                                                     <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl mr-6" width="150">
                                                                 </div>
 
-                                                                <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
-                                                                <x-form.textarea name="body" required>{{ old('body', $post->body) }}</x-form.textarea>
+                                                                <x-form.edit.editor name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.edit.editor>
+                                                                <div class="px-26">
+                                                                    <x-form.edit.editor class="description" name="body" required>{{ old('body', $post->body) }}</x-form.edit.editor>
+                                                                </div>
 
                                                                 <x-form.field>
                                                                     <x-form.label name="category" />
