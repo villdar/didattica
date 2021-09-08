@@ -15,11 +15,11 @@
                 if (opening) {
                     responseContainer.style.display = 'none';
                     formContainer.style.display = 'block';
-                    container.classList.remove('-translate-x-full', 'opacity-0');
-                    container.classList.add('translate-x-80', 'opacity-100');
+                    container.classList.remove('-translate-x-full', 'opacity-0', 'z-0');
+                    container.classList.add('translate-x-80', 'opacity-100', 'z-20');
                 } else {
-                    container.classList.remove('translate-x-80', 'opacity-100');
-                    container.classList.add('-translate-x-full', 'opacity-0');
+                    container.classList.remove('translate-x-80', 'opacity-100', 'z-20');
+                    container.classList.add('-translate-x-full', 'opacity-0', 'z-0');
                 }
             });
 

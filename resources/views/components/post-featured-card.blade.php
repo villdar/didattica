@@ -1,5 +1,3 @@
-@props(['post'])
-
 <div x-data="{ show: true }" @click.away="show = true" class="block">
     <div class="z-50 lg:z-0 lg:hidden">
         <x-toggle class="lg:hidden">
@@ -14,8 +12,7 @@
         x-transition:leave-start="transform opacity-100 scale-100"
         x-transition:leave-end="transform opacity-0 scale-95"
         class="items-center w-full">
-        <div id="my_dataviz" class="lg:block">
-        </div>
+        <x-chord></x-chord>
     </div>
 </div>
 

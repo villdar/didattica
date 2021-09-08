@@ -9,13 +9,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+
 <script src="https://d3js.org/d3.v4.js"></script>
 
 <!-- include libraries(jQuery, bootstrap) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-{{-- <script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> --}}
 
 
 <style>
@@ -40,7 +39,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="https://www.iuffp.swiss/sites/all/themes/onecms/logo-it.svg" alt="SUFFP" width="165" height="16">
+                    <img src="https://www.suffp.swiss/sites/all/themes/onecms/logo-it.svg" alt="SUFFP" width="165" height="16">
                 </a>
             </div>
 
@@ -96,7 +95,6 @@
                 </a>
             </div>
         </nav>
-
         {{ $slot }}
         @auth
             <x-support-bubble />
@@ -144,6 +142,9 @@
     <x-flash />
 </body>
 
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}" defer></script>
+
 <!-- tinyMCE -->
 <script src="https://cdn.tiny.cloud/1/2f2cj5q3u6r5pgkbpmaas0d24xqlameceysvtwmlsgce2rze/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
@@ -152,7 +153,9 @@
     });
 </script>
 
-<script>
+
+
+{{-- <script>
     // create the svg area
     var svg = d3.select("#my_dataviz")
         .append("svg")
@@ -224,12 +227,6 @@
             .style("opacity", 0)
     }
 
-    d3.select("svg")
-        .on("click", function() {
-            d3.select("svg")
-                .ribbon(console.log("ciao"))
-        });
-
     // Add the links between groups
     svg
         .datum(res)
@@ -247,7 +244,7 @@
         .style("stroke", "black")
         .on("mouseover", showTooltip)
         .on("mouseleave", hideTooltip)
-</script>
+</script> --}}
 
 {{-- <script>
     /*//////////////////////////////////////////////////////////

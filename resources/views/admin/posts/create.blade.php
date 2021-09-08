@@ -9,7 +9,7 @@
             <x-form.input name="thumbnail" type="file" required />
             <x-form.textarea name="excerpt" required />
             <div>
-                <x-form.edit.editor class="description" name="body"></x-form.edit.editor>
+                <x-form.textarea class="description" name="body"></x-form.textarea>
             </div>
 
             <x-form.field>
