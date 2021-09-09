@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 
+
 function App(props) {
 
     const [hide, setHide] = useState('');
@@ -19,24 +20,29 @@ function App(props) {
         category.name
     ))
 
-    var counts = categories.map(category => (
+    const counts = categories.map(category => (
         category.posts_count
     ))
 
-    console.log(counts);
 
-    var lenght = keys.length;
+    // function listToMatrix(list) {
+    //     var matrix = [];
+    //     for ( let i = 0;  i < list.length;  i++) {
+    //         matrix[i] = [];
 
-    var matrix = [];
+    //         for (let j = 0; j < list.length; j++) {
+    //             matrix[i][j] = i == j ? list[i] : 0;
+    //         }
+    //     }
 
-    for (let i = 0; i < lenght; i++) {
-        matrix.push(counts);
-    }
+	//     return matrix;
+    // }
+
+    var matrix = counts.map((el, i) => [...counts].fill(0).fill(el, i, i + 1));
 
     console.log(matrix);
 
-
-  function hideOnClick(id) {
+    function hideOnClick(id) {
       setHide({value: id})
       console.log(id);
       const body = {
