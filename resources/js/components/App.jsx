@@ -4,11 +4,11 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 
-
 function App(props) {
 
+
     const [hide, setHide] = useState('');
-    const url = '/ok';
+    const url = '/category';
 
     const categories = props.categories;
 
@@ -40,8 +40,6 @@ function App(props) {
 
     var matrix = counts.map((el, i) => [...counts].fill(0).fill(el, i, i + 1));
 
-    console.log(matrix);
-
     function hideOnClick(id) {
       setHide({value: id})
       console.log(id);
@@ -60,9 +58,11 @@ function App(props) {
 
       fetch(url, requestMetadata)
         .then(res => res.json())
-        .then(hide => {
-            this.setState({hide});
-            console.log(this.setState());
+        .then(res => {
+            this.setState({
+                url: res
+            })
+            console.log(res);
         })
     }
 

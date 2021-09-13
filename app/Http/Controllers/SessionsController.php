@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 
 class SessionsController extends Controller
@@ -35,10 +34,5 @@ class SessionsController extends Controller
         auth()->logout();
 
         return redirect('/')->with('success', 'Arrivederci!');
-    }
-
-    public function postBody(Request $request)
-    {
-        echo $request->input('chordId');
     }
 }

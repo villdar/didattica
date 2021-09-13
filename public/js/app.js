@@ -14100,7 +14100,7 @@ function App(props) {
       hide = _useState2[0],
       setHide = _useState2[1];
 
-  var url = '/ok';
+  var url = '/category';
   var categories = props.categories;
   var colors = categories.map(function (category) {
     return category.style;
@@ -14124,7 +14124,6 @@ function App(props) {
   var matrix = counts.map(function (el, i) {
     return _toConsumableArray(counts).fill(0).fill(el, i, i + 1);
   });
-  console.log(matrix);
 
   function hideOnClick(id) {
     var _this = this;
@@ -14146,12 +14145,12 @@ function App(props) {
     console.log(body);
     fetch(url, requestMetadata).then(function (res) {
       return res.json();
-    }).then(function (hide) {
+    }).then(function (res) {
       _this.setState({
-        hide: hide
+        url: res
       });
 
-      console.log(_this.setState());
+      console.log(res);
     });
   }
 
