@@ -48,24 +48,23 @@ function App(props) {
           'chordId' : id,
       }
 
-
-      // response => JSON.stringify(response.data),
+    //   response => JSON.stringify(response.data),
       // window.location.reload()
       axios.post(url, body)
       .then(function(response){
-            console.log(response.data);
+            console.log(response);
             // Create a new element
             var newNode = document.createElement('div');
 
             // Add ID and content
-            newNode.id = 'NewChord_id';
+            newNode.id = 'chord_id';
             newNode.innerHTML = response.data;
             var currentNode = document.querySelector('#chord_id');
             currentNode.replaceWith(newNode);
 
         })
         .catch(error => {
-                console.log("ERROR:: ",error.response.data);
+            console.log("ERROR:: ",error.response);
         });
 
     //   const requestMetadata = {

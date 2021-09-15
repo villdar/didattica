@@ -2036,16 +2036,16 @@
         },
         {
             "name": "mailchimp/marketing",
-            "version": "3.0.59",
+            "version": "3.0.65",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mailchimp/mailchimp-marketing-php.git",
-                "reference": "f533e25dff1f4375b288ff7c041150fcae02d8a7"
+                "reference": "b67f37dcaf187221a9aaf32eb7a11da07a1e098e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mailchimp/mailchimp-marketing-php/zipball/f533e25dff1f4375b288ff7c041150fcae02d8a7",
-                "reference": "f533e25dff1f4375b288ff7c041150fcae02d8a7",
+                "url": "https://api.github.com/repos/mailchimp/mailchimp-marketing-php/zipball/b67f37dcaf187221a9aaf32eb7a11da07a1e098e",
+                "reference": "b67f37dcaf187221a9aaf32eb7a11da07a1e098e",
                 "shasum": ""
             },
             "require": {
@@ -2085,9 +2085,9 @@
                 "swagger"
             ],
             "support": {
-                "source": "https://github.com/mailchimp/mailchimp-marketing-php/tree/v3.0.59"
+                "source": "https://github.com/mailchimp/mailchimp-marketing-php/tree/v3.0.65"
             },
-            "time": "2021-08-27T15:40:36+00:00"
+            "time": "2021-09-13T14:01:05+00:00"
         },
         {
             "name": "matomo/device-detector",
