@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6c29b2ed84ea246b9839c6b0d9a1b69",
+    "content-hash": "57e1d13dbf9c8025d8f2667d0bbc2d39",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3658,16 +3658,16 @@
         },
         {
             "name": "spatie/laravel-support-bubble",
-            "version": "1.0.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-support-bubble.git",
-                "reference": "ea911cfff64efe3c4e4726029570c2aa68218e18"
+                "reference": "2dc9d017baa973923b531e2083f91e727331aa1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-support-bubble/zipball/ea911cfff64efe3c4e4726029570c2aa68218e18",
-                "reference": "ea911cfff64efe3c4e4726029570c2aa68218e18",
+                "url": "https://api.github.com/repos/spatie/laravel-support-bubble/zipball/2dc9d017baa973923b531e2083f91e727331aa1a",
+                "reference": "2dc9d017baa973923b531e2083f91e727331aa1a",
                 "shasum": ""
             },
             "require": {
@@ -3729,7 +3729,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-support-bubble/tree/1.0.2"
+                "source": "https://github.com/spatie/laravel-support-bubble/tree/1.2.3"
             },
             "funding": [
                 {
@@ -3737,7 +3737,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-03T15:44:11+00:00"
+            "time": "2021-09-14T14:02:45+00:00"
         },
         {
             "name": "spatie/yaml-front-matter",
