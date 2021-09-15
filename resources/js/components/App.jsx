@@ -1,7 +1,8 @@
 import Chord from './Chord';
 import '../../css/app.css';
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { render } from 'react-dom';
+import axios from 'axios';
 
 
 function App(props) {
@@ -47,23 +48,43 @@ function App(props) {
           'chordId' : id,
       }
 
-      const requestMetadata = {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(body)
-        };
-        console.log(body);
 
-      fetch(url, requestMetadata)
-        .then(res => res.json())
-        .then(res => {
-            this.setState({
-                url: res
-            })
-            console.log(res);
+      // response => JSON.stringify(response.data),
+      // window.location.reload()
+      axios.post(url, body)
+      .then(function(response){
+            console.log(response.data);
+            // Create a new element
+            var newNode = document.createElement('div');
+
+            // Add ID and content
+            newNode.id = 'NewChord_id';
+            newNode.innerHTML = response.data;
+            var currentNode = document.querySelector('#chord_id');
+            currentNode.replaceWith(newNode);
+
         })
+        .catch(error => {
+                console.log("ERROR:: ",error.response.data);
+        });
+
+    //   const requestMetadata = {
+    //       method: 'POST',
+    //       headers: {
+    //           'Content-Type': 'application/json'
+    //       },
+    //       body: JSON.stringify(body)
+    //     };
+    //     console.log(body);
+
+    //   fetch(url, requestMetadata)
+    //     .then(res => res.json())
+    //     .then(res => {
+    //         this.setState({
+    //             url: res
+    //         })
+    //         console.log(res);
+    //     })
     }
 
   return (

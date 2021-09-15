@@ -1,6 +1,6 @@
 <x-form.field>
     <button type="submit"
-            class="bg-blue-500 text-white uppercase font-semibold text-xs py-2 m-4 px-10 rounded-2xl hover:bg-blue-600"
+            class="px-10 py-2 m-4 text-xs font-semibold text-white uppercase bg-blue-500 rounded-2xl hover:bg-blue-600"
     >
         {{ $slot }}
     </button>

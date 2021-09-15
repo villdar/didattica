@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use Facade\FlareClient\View;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -32,17 +34,14 @@ class PostController extends Controller
     {
         $chord = $request->get('chordId');
 
-        //$chord = Str::contains($chord, ['Valutazione tra pari']);
-
-        $category = Post::join('categories', function ($builder) {
+        $posts = Post::join('categories', function ($builder) {
             $builder->on('categories.id', '=', 'posts.category_id');
         })
         ->where('name', '=', Str::before($chord, '.'))
         ->get();
 
 
-        // dump($category);
-
-        return $category;
+        return view('components.article')->with(array('posts' => $posts));
+        // return $posts;
     }
 }
