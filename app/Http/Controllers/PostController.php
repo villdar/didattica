@@ -34,13 +34,16 @@ class PostController extends Controller
     {
         $chord = $request->get('chordId');
 
-        $posts = Post::join('categories', function ($builder) {
-            $builder->on('categories.id', '=', 'posts.category_id');
-        })
-        ->where('name', '=', Str::before($chord, '.'))
-        ->get();
+        $posts = Post::select('posts.*', 'categories.slug as category_slug') // add other fields you need from categories table
+            ->join('categories', function ($builder) {
+                $builder->on('categories.id', '=', 'posts.category_id');
+            })
+                ->where('name', '=', Str::before($chord, '.'))
+                ->get();
 
 
+
+        // dd($posts);
         return view('components.article')->with(array('posts' => $posts));
         // return $posts;
     }

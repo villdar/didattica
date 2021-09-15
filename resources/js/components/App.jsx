@@ -52,7 +52,7 @@ function App(props) {
       // window.location.reload()
       axios.post(url, body)
       .then(function(response){
-            console.log(response);
+            console.log(response.data);
             // Create a new element
             var newNode = document.createElement('div');
 

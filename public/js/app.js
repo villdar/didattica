@@ -17147,7 +17147,7 @@ function App(props) {
     // window.location.reload()
 
     axios__WEBPACK_IMPORTED_MODULE_4___default().post(url, body).then(function (response) {
-      console.log(response); // Create a new element
+      console.log(response.data); // Create a new element
 
       var newNode = document.createElement('div'); // Add ID and content
 
