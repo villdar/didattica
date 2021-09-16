@@ -26,7 +26,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
         return view('posts.show', [
-            'post' => $post
+            'post' => $post,
+            'backUrl' => url()->previous() !== url()->full() && url()->previous()
+                ? url()->previous()
+                : route('posts.index'),
         ]);
     }
 
