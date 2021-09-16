@@ -2,8 +2,8 @@
     <x-setting heading="Modifica strumenti">
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                    <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($posts as $post)
@@ -18,9 +18,9 @@
                                             </div>
                                         </td>
 
-                                        <td class="px-4 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                        <td class="px-4 py-4 text-sm font-medium text-center whitespace-nowrap">
                                             <div x-data="{ isEditModalVisible: false}">
-                                                <x-button @click="isEditModalVisible = true" class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-blue-400 hover:text-blue-600">
+                                                <x-button @click="isEditModalVisible = true" class="px-5 py-3 text-blue-400 transition duration-150 ease-in hover:bg-gray-100 hover:text-blue-600">
                                                     Modifica
                                                 </x-button>
                                                 <div
@@ -31,11 +31,11 @@
                                                      x-transition:leave="transition ease-in duration-75"
                                                      x-transition:leave-start="transform opacity-100 scale-100"
                                                      x-transition:leave-end="transform opacity-0 scale-95"
-                                                     class="z-10 fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
-                                                    <div class="bg-gray-800 opacity-20 fixed inset-0" @click="isEditModalVisible = false"></div>
-                                                    <div class="fixed inset-0 py-6 container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                                                        <div class="bg-gray-50 rounded">
-                                                            <div class="flex justiy-end pr-4 pt-2 px-6">
+                                                     class="fixed top-0 left-0 z-10 flex items-center w-full h-full overflow-y-auto shadow-lg">
+                                                    <div class="fixed inset-0 bg-gray-800 opacity-20" @click="isEditModalVisible = false"></div>
+                                                    <div class="container fixed inset-0 py-6 mx-auto overflow-y-auto rounded-lg lg:px-32">
+                                                        <div class="rounded bg-gray-50">
+                                                            <div class="flex px-6 pt-2 pr-4 justiy-end">
                                                                 <button
                                                                         @click="isEditModalVisible = false"
                                                                         @keydown.escape.window="isEditModalVisible = false"
@@ -48,18 +48,21 @@
                                                                 <x-form.edit.input name="title" :value="old('title', $post->title)" required />
                                                                 <x-form.edit.input name="slug" :value="old('slug', $post->slug)" required />
 
-                                                                <div class="flex mt-6 px-4 mr-6">
+                                                                <div class="flex px-4 mt-6 mr-6">
                                                                     <div class="flex-1 w-2/12">
                                                                         <x-form.edit.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
                                                                     </div>
 
-                                                                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl mr-6" width="150">
+                                                                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="mr-6 rounded-xl" width="150">
                                                                 </div>
+
 
                                                                 <x-form.edit.editor name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.edit.editor>
                                                                 <div class="px-26">
-                                                                    <x-form.edit.editor class="description" name="body" required>{{ old('body', $post->body) }}</x-form.edit.editor>
+                                                                    <x-form.edit.editor class="summernote" name="body" required>{{ old('body', $post->body) }}</x-form.edit.editor>
                                                                 </div>
+
+
 
                                                                 <x-form.field>
                                                                     <x-form.label name="category" />
@@ -82,9 +85,9 @@
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
+                                        <td class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap">
                                             <div x-data="{ isDeleteModalVisible: false}">
-                                                <x-button @click="isDeleteModalVisible = true" class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-red-400 hover:text-red-600">
+                                                <x-button @click="isDeleteModalVisible = true" class="px-5 py-3 text-red-400 transition duration-150 ease-in hover:bg-gray-100 hover:text-red-600">
                                                     Cancella
                                                 </x-button>
                                                 <div
@@ -95,20 +98,20 @@
                                                      x-transition:leave="transition ease-in duration-75"
                                                      x-transition:leave-start="transform opacity-100 scale-100"
                                                      x-transition:leave-end="transform opacity-0 scale-95"
-                                                     class="z-10 fixed top-0 left-0 w-full h-full flex items-center shadow-lg overflow-y-auto">
-                                                    <div class="bg-gray-800 opacity-20 fixed inset-0" @click="isDeleteModalVisible = false"></div>
-                                                    <div class="fixed inset-0 py-36 container mx-auto lg:px-32 rounded-lg overflow-y-auto">
-                                                        <div class="bg-gray-50 rounded">
-                                                            <div class="flex justiy-end pr-4 pt-2 px-6">
+                                                     class="fixed top-0 left-0 z-10 flex items-center w-full h-full overflow-y-auto shadow-lg">
+                                                    <div class="fixed inset-0 bg-gray-800 opacity-20" @click="isDeleteModalVisible = false"></div>
+                                                    <div class="container fixed inset-0 mx-auto overflow-y-auto rounded-lg py-36 lg:px-32">
+                                                        <div class="rounded bg-gray-50">
+                                                            <div class="flex px-6 pt-2 pr-4 justiy-end">
                                                                 <button
                                                                         @click="isDeleteModalVisible = false"
                                                                         @keydown.escape.window="isDeleteModalVisible = false"
                                                                         class="text-3xl leading-none hover:text-gray-300">&times;</button>
                                                             </div>
-                                                            <header class="p-6 right-0">
+                                                            <header class="right-0 p-6">
                                                                 <h3 class="text-lg font-bold">Sei sicuro?</h3>
                                                             </header>
-                                                            <div class="modal-body px-8 py-8 grid-cols-2">
+                                                            <div class="grid-cols-2 px-8 py-8 modal-body">
                                                                 <main class="px-6 mb-4">
                                                                     <span class="text-sm">
                                                                         Continuando cancellerai definitivamente lo strumento.
@@ -118,11 +121,11 @@
                                                                     <form method="POST" action="/admin/posts/{{ $post->id }}">
                                                                         @csrf
                                                                         @method('DELETE')
-                                                                        <x-button class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-red-400 hover:text-red-600">
+                                                                        <x-button class="px-5 py-3 text-red-400 transition duration-150 ease-in hover:bg-gray-100 hover:text-red-600">
                                                                             Cancella
                                                                         </x-button>
                                                                     </form>
-                                                                    <x-button @click="isDeleteModalVisible = false" class="px-5 py-3 transition duration-150 ease-in hover:bg-gray-100 text-gray-400 hover:text-gray-600">
+                                                                    <x-button @click="isDeleteModalVisible = false" class="px-5 py-3 text-gray-400 transition duration-150 ease-in hover:bg-gray-100 hover:text-gray-600">
                                                                         Annulla
                                                                     </x-button>
                                                                 </footer>

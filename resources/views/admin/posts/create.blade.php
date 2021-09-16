@@ -8,9 +8,8 @@
             <x-form.input name="slug" required />
             <x-form.input name="thumbnail" type="file" required />
             <x-form.textarea name="excerpt" required />
-            <div>
-                <x-form.textarea class="description" name="body"></x-form.textarea>
-            </div>
+            <x-form.textarea name="body" id="summernote" required/>
+
 
             <x-form.field>
                 <x-form.label name="category"/>
