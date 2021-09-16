@@ -3,7 +3,6 @@
         <x-post-featured-card />
     </article>
     <article>
-        <x-post-card
-            :posts="$posts" />
+        <x-post-card :posts="$posts" />
     </article>
 </div>

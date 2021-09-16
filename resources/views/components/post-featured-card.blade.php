@@ -15,18 +15,3 @@
         <x-chord></x-chord>
     </div>
 </div>
-
-
-{{-- <div id="chart"></div>
-<div id="clickerWrapper">
-    <div id="progress"></div>
-    <div id="clicker">Let's Start</div>
-</div>
-<div id="buttonWrapper">
-    <div id="buttonWrapperInner">
-        <div id="skip" class="sideButton">SKIP INTRO</div>
-        <div id="reset" class="sideButton">RESET</div>
-        <div id="link" class="sideButton"><a href="http://bl.ocks.org/nbremer/raw/94db779237655907b907/" target="_blank">GO TO SOURCE</a></div>
-    </div>
-</div>
-</div> --}}

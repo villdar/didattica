@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Post;
-use Facade\FlareClient\View;
-use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Illuminate\Validation\Rule;
-use League\CommonMark\Extension\Attributes\Node\Attributes;
 
 class PostController extends Controller
 {
