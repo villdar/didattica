@@ -16,6 +16,8 @@
             </div>
 
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
+            <x-form.textarea name="pros" required>{{ old('pros', $post->pros) }}</x-form.textarea>
+            <x-form.textarea name="cons" required>{{ old('cons', $post->cons) }}</x-form.textarea>
             <x-form.textarea name="body" required>{{ old('body', $post->body) }}</x-form.textarea>
 
             <x-form.field>

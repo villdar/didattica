@@ -17179,7 +17179,7 @@ function App(props) {
     className: "App",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       style: {
-        height: 600
+        height: 800
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Chord__WEBPACK_IMPORTED_MODULE_0__.default, {
         hideOnClick: hideOnClick,

@@ -59,6 +59,10 @@
 
                                                                 <x-form.edit.editor name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.edit.editor>
                                                                 <div class="px-26">
+                                                                    <x-form.edit.editor class="summernote" name="pros" required>{{ old('pros', $post->pros) }}</x-form.edit.editor>
+                                                                    <x-form.edit.editor class="summernote" name="cons" required>{{ old('cons', $post->cons) }}</x-form.edit.editor>
+                                                                </div>
+                                                                <div class="px-26">
                                                                     <x-form.edit.editor class="summernote" name="body" required>{{ old('body', $post->body) }}</x-form.edit.editor>
                                                                 </div>
 

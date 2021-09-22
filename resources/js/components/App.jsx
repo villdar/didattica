@@ -88,7 +88,7 @@ function App(props) {
 
   return (
     <div className="App">
-        <div style={{ height: 600 }}>
+        <div style={{ height: 800 }}>
             <Chord hideOnClick={hideOnClick} keys={keys} colors={colors} matrix={matrix}/>
         </div>
     </div>
