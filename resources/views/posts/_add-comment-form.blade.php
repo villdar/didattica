@@ -4,11 +4,6 @@
             @csrf
 
             <header class="flex items-center">
-                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}"
-                     alt=""
-                     width="40"
-                     height="40"
-                     class="rounded-full">
 
                 <h2 class="ml-4">Vuoi partecipare?</h2>
             </header>
@@ -16,7 +11,7 @@
             <div class="mt-6">
                 <textarea
                     name="body"
-                    class="w-full text-sm focus:outline-none focus:ring p-4"
+                    class="w-full p-4 text-sm focus:outline-none focus:ring"
                     rows="5"
                     placeholder="Veloce! Pensa a qualcosa da dire."
                     required></textarea>
@@ -26,7 +21,7 @@
                 @enderror
             </div>
 
-            <div class="flex justify-end mt-2 pt-4 border-t border-gray-200">
+            <div class="flex justify-end pt-4 mt-2 border-t border-gray-200">
                 <x-form.button>Invia</x-form.button>
             </div>
         </form>

@@ -1,16 +1,16 @@
 <h3>Meta</h3>
 <ul>
 @if($name)
-<li><strong>Name</strong>: {{ $name }}</li>
+<li><strong>Nome</strong>: {{ $name }}</li>
 @endif
 @if($email)
 <li><strong>E-mail</strong>: {{ $email }}</li>
 @endif
 @if($subject)
-<li><strong>Subject</strong>: {{ $subject }}</li>
+<li><strong>Oggetto</strong>: {{ $subject }}</li>
 @endif
 @if($url)
-<li><strong>URL</strong>: {{ $url }}</li>
+<li><strong>Indirizzo</strong>: {{ $url }}</li>
 @endif
 @if($ip)
 <li><strong>IP-address</strong>: {{ $ip }}</li>

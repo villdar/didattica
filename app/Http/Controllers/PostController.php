@@ -13,7 +13,7 @@ class PostController extends Controller
         return view('posts.index', [
             'posts' => Post::latest()->filter(
                 request(['search', 'category', 'author'])
-            )->paginate(1)->withQueryString(),
+            )->paginate(3)->withQueryString(),
         ]);
     }
 
@@ -31,17 +31,13 @@ class PostController extends Controller
     {
         $chord = $request->get('chordId');
 
-        $posts = Post::select('posts.*', 'categories.slug as category_slug') // add other fields you need from categories table
+        $posts = Post::select('posts.*', 'categories.slug as category_slug')
+        // aggiunge un altro campo dalla tabella categories
             ->join('categories', function ($builder) {
                 $builder->on('categories.id', '=', 'posts.category_id');
             })
                 ->where('name', '=', Str::before($chord, '.'))
                 ->get();
-
-
-
-        // dd($posts);
         return view('components.article')->with(array('posts' => $posts));
-        // return $posts;
     }
 }
