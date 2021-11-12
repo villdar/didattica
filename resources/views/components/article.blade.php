@@ -41,7 +41,7 @@
                 <h4 class="mt-2 text-xl font-semibold md:mt-0">
                     <a href="/posts/{{ $post->slug }}" class="hover:underline">{{ $post->title }}</a>
                 </h4>
-                    <div class="mr-8">
+                    <div class="mr-5">
                         <x-category-button :category="$post->category" />
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     {{ $post->excerpt }}
                 </div>
                 <div class="flex flex-col justify-between mt-6 md:flex-row md:items-center">
-                    <div class="flex items-center space-x-2 text-xs font-semibold text-gray-400">
+                    <div class="flex items-center space-x-1 text-xs font-semibold text-gray-400">
                         <div>{{ $post->created_at->diffForHumans() }}</div>
                         <div>&bull;</div>
                         <div>{{ $post->category->name }}</div>
@@ -58,7 +58,7 @@
                     </div>
                     <div>
                         <a href="/posts/{{ $post->slug }}"
-                           class="px-8 py-2 mr-8 text-xs font-semibold text-gray-400 transition-colors duration-300 bg-gray-200 rounded-full hover:bg-gray-300">Scopri di più</a>
+                           class="px-8 py-2 mr-5 text-xs font-semibold text-gray-400 transition-colors duration-300 bg-gray-200 rounded-full hover:bg-gray-300">Scopri di più</a>
                     </div>
                 </div>
             </div>
