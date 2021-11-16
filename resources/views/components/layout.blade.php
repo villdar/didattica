@@ -33,6 +33,10 @@
         -webkit-line-clamp: 1;
     }
 
+    [x-cloak] {
+        display: none !important;
+    }
+
 </style>
 
 <body style="font-family: 'Montserrat', sans-serif" id="didattica">
