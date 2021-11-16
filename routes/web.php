@@ -28,3 +28,9 @@ Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth'
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('show');
 });
+
+//Download guide utente e admin
+Route::get('download/{filename}', function ($filename) {
+    $file = storage_path('app') . '/'.'download'.'/' . $filename; // or wherever you have stored your PDF files
+    return response()->download($file);
+});

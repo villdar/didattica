@@ -52,7 +52,7 @@
                 @auth
                     <x-dropdown>
                         <x-slot name="trigger">
-                            <button class="pl-12 pr-8 text-xs font-bold uppercase">
+                            <button class="pl-20 pr-8 text-xs font-bold uppercase">
                                 {{ auth()->user()->name }} !
                             </button>
                         </x-slot>
@@ -71,13 +71,23 @@
                         </x-dropdown-item>
                         @endadmin
 
+                        @admin
+                        <hr>
+                        <x-dropdown-item href="{{ asset('download/' . 'ManualeAmministratore.pdf') }}">
+                            Guida per l'admin
+                        </x-dropdown-item>
+                        @endadmin
+                        <x-dropdown-item href="{{ asset('download/' . 'ManualeUtente.pdf') }}">
+                            Guida per l'utente
+                        </x-dropdown-item>
+                        <hr>
                         <x-dropdown-item
                                          href="#"
                                          x-data="{}"
-                                         @click.prevent="document.querySelector('#logout-form').submit()">
+                                         @click.prevent="document.querySelector('#logout-form').submit()"
+                                         class="font-bold">
                             Log Out
                         </x-dropdown-item>
-
                         <form id="logout-form" method="POST" action="/logout" class="hidden">
                             @csrf
                         </form>
