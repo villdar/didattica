@@ -36,7 +36,7 @@
 </style>
 
 <body style="font-family: 'Montserrat', sans-serif" id="didattica">
-    <section class="px-6 py-8">
+    <section class="px-6 py-2">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">

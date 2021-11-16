@@ -3,7 +3,6 @@
 namespace App\View\Components;
 
 use App\Models\Category;
-use App\Models\Post;
 use Illuminate\View\Component;
 
 class Chord extends Component

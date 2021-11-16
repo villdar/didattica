@@ -37,26 +37,26 @@
         <!-- Versione 2 -->
         <article class="py-6 mb-4 space-y-6 transition-colors duration-300 border border-black border-opacity-0 bg-gray-50 hover:bg-gray-100 hover:border-opacity-5 rounded-xl">
             <div class="flex flex-col justify-between w-full mx-2 md:mx-4">
-                <div class="flex justify-between">
+                <div class="justify-between md:flex">
                 <h4 class="mt-2 text-xl font-semibold md:mt-0">
                     <a href="/posts/{{ $post->slug }}" class="hover:underline">{{ $post->title }}</a>
                 </h4>
-                    <div class="mr-5">
+                    <div class="mt-2 md:mr-5">
                         <x-category-button :category="$post->category" />
                     </div>
                 </div>
-                <div class="mt-3 text-gray-600 line-clamp-3">
+                <div class="p-1 mt-3 text-gray-600 line-clamp-3">
                     {{ $post->excerpt }}
                 </div>
                 <div class="flex flex-col justify-between mt-6 md:flex-row md:items-center">
-                    <div class="flex items-center space-x-1 text-xs font-semibold text-gray-400">
+                    <div class="flex items-center space-x-0.5 text-xs font-semibold text-gray-400 md:space-x-1">
                         <div>{{ $post->created_at->diffForHumans() }}</div>
                         <div>&bull;</div>
                         <div>{{ $post->category->name }}</div>
                         <div>&bull;</div>
                         <div wire:ignore class="text-gray-900">{{ $post->comments->count() }} commenti</div>
                     </div>
-                    <div>
+                    <div class="mt-8 md:mt-0">
                         <a href="/posts/{{ $post->slug }}"
                            class="px-8 py-2 mr-5 text-xs font-semibold text-gray-400 transition-colors duration-300 bg-gray-200 rounded-full hover:bg-gray-300">Scopri di più</a>
                     </div>
