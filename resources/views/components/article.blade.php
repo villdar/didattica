@@ -52,7 +52,7 @@
                     <div class="flex items-center space-x-0.5 text-xs font-semibold text-gray-400 md:space-x-1">
                         <div>{{ $post->created_at->diffForHumans() }}</div>
                         <div>&bull;</div>
-                        <div>{{ $post->category->name }}</div>
+                        <div class="font-semibold text-blue-400">piace a <span class="text-sm">20</span> persone</div>
                         <div>&bull;</div>
                         <div wire:ignore class="text-gray-900">{{ $post->comments->count() }} commenti</div>
                     </div>

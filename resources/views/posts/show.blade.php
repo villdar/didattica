@@ -62,6 +62,21 @@
                 </div>
 
                 <div class="space-y-4 leading-loose lg:text-lg">{!! $post->body !!}</div>
+                <article class="py-3 mt-4 bg-white">
+                    <div class="flex justify-between w-full mx-2 hover:text-gray-600">
+                        <div class="text-center">
+                            <div class="text-2xl font-semibold text-blue">20</div>
+                            <div class="text-gray-500">Voti</div>
+                        </div>
+                        <div>
+                            {{-- @if ($hasVoted)
+                            <button wire:click.prevent="vote" class="w-20 px-4 py-3 font-bold text-white uppercase transition duration-150 ease-in border bg-blue border-blue hover:bg-blue-hover text-xxs rounded-xl">Voted</button>
+                        @else --}}
+                            <button wire:click.prevent="vote" class="w-20 px-4 py-3 text-xs font-bold uppercase transition duration-150 ease-in bg-gray-200 border border-gray-200 hover:border-gray-400 rounded-xl">Vota</button>
+                        </div>
+                    </div>
+
+                </article>
             </div>
 
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
