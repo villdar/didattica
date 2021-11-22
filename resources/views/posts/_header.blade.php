@@ -23,12 +23,5 @@
                 >
             </form>
         </div>
-        <div class="relative bg-gray-100 lg:inline-flex rounded-xl">
-            <select>
-                <option>Ordina per voti</option>
-                <option>Discendente</option>
-                <option>Ascendente</option>
-            </select>
-        </div>
     </div>
 </header>

@@ -14,6 +14,8 @@
 
 <script src="https://d3js.org/d3.v4.js"></script>
 
+@livewireStyles
+
 <!-- include libraries(jQuery) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -31,6 +33,12 @@
 
     .clamp.one-line {
         -webkit-line-clamp: 1;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .media-block {
+            display: block !important;
+        }
     }
 
     [x-cloak] {
@@ -56,6 +64,12 @@
                                 {{ auth()->user()->name }} !
                             </button>
                         </x-slot>
+
+                        {{-- <x-dropdown-item
+                                         href="{{ redirect()->route('profile') }}"
+                                         >
+                            Profilo
+                        </x-dropdown-item> --}}
 
                         @admin
                         <x-dropdown-item
@@ -156,6 +170,8 @@
 
     <x-flash />
 </body>
+
+@livewireScripts
 
 <!-- summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">

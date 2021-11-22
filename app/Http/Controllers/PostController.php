@@ -13,7 +13,7 @@ class PostController extends Controller
         return view('posts.index', [
             'posts' => Post::latest()->filter(
                 request(['search', 'category', 'author'])
-            )->paginate(3)->withQueryString(),
+            )->paginate(3)->withQueryString()
         ]);
     }
 
@@ -21,9 +21,10 @@ class PostController extends Controller
     {
         return view('posts.show', [
             'post' => $post,
+            'votesCount' => $post->votes()->count(),
             'backUrl' => url()->previous() !== url()->full() && url()->previous()
                 ? url()->previous()
-                : route('posts.index'),
+                : route('home'),
         ]);
     }
 

@@ -12,11 +12,11 @@
 
                 <p class="text-xs">
                     Postato
-                    <time>{{ $comment->created_at->format('F j, Y, g:i a') }}</time>
+                    <time>{{ $comment->created_at->diffForHumans() }}</time>
                 </p>
             </header>
 
-            <p>
+            <p class="leading-tight break-all">
                 {{ $comment->body }}
             </p>
         </div>
