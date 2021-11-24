@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\UserPublicProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
@@ -24,12 +25,13 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('/category', [PostController::class, 'postBody']);
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
-// Route::get('profile/', [UserProfileController::class, 'index'])->middleware('auth');
-// Route::get('profile/{user:id}', [UserProfileController::class, 'show'])->middleware('auth')->name('profile');
+Route::get('/profile', [UserProfileController::class, '__invoke'])->middleware('auth')->name('profile');
+Route::get('profile/{user:username}', [UserPublicProfileController::class, 'show'])->name('public-profile');
 
 // Admin Section
 Route::middleware('can:admin')->group(function () {
     Route::resource('admin/posts', AdminPostController::class)->except('show');
+    Route::get('admin/posts/analytics', AdminPostController::class, '__invoke');
 });
 
 //Download guide utente e admin

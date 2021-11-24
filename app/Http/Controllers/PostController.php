@@ -28,6 +28,7 @@ class PostController extends Controller
         ]);
     }
 
+
     public function postBody(Request $request)
     {
         $chord = $request->get('chordId');

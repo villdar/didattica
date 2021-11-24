@@ -65,11 +65,11 @@
                             </button>
                         </x-slot>
 
-                        {{-- <x-dropdown-item
-                                         href="{{ redirect()->route('profile') }}"
+                        <x-dropdown-item
+                                         href="{{ route('profile') }}"
                                          >
                             Profilo
-                        </x-dropdown-item> --}}
+                        </x-dropdown-item>
 
                         @admin
                         <x-dropdown-item
@@ -172,6 +172,7 @@
 </body>
 
 @livewireScripts
+@livewireChartsScripts
 
 <!-- summernote css/js -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">

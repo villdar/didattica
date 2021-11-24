@@ -14,6 +14,11 @@ class AdminPostController extends Controller
         ]);
     }
 
+    public function __invoke()
+    {
+        return view('admin.posts.analytics');
+    }
+
     public function create()
     {
         return view('admin.posts.create');

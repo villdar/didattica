@@ -1,3 +1,4 @@
+
 @foreach ($posts as $post)
     <div class="mt-16">
         <!-- Versione 1 -->
