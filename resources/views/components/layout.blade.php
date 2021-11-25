@@ -144,27 +144,23 @@
                             <label for="email" class="hidden lg:inline-block">
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
+                            <input
+                                    name="email"
+                                    type="text"
+                                    placeholder="La tua mail"
+                                    class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
+                                </div>
 
-                            <div>
-                                <input id="email"
-                                       name="email"
-                                       type="text"
-                                       placeholder="La tua mail"
-                                       class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
-
-                                @error('email')
-                                    <span class="text-xs text-red-500">{{ $message }}</span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <button type="submit"
+                                <button type="submit"
                                 class="px-8 py-3 mt-4 text-xs font-semibold text-white uppercase transition-colors duration-300 bg-blue-500 rounded-full hover:bg-blue-600 lg:mt-0 lg:ml-3">
-                            Iscriviti
-                        </button>
-                    </form>
+                                Iscriviti
+                            </button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+                @error('email')
+                    <span class="text-xs text-red-500">{{ $message }}</span>
+                @enderror
         </footer>
     </section>
 

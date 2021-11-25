@@ -5,8 +5,8 @@
         {{ $heading }}
     </h1>
 
-    <div class="flex">
-        <aside class="flex-shrink-0 w-48">
+    <div class="space-y-3 lg:flex">
+        <aside class="flex-shrink-0 lg:w-48">
             <h4 class="mb-4 font-semibold">Link utili</h4>
 
             <ul>

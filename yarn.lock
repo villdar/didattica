@@ -1074,6 +1074,11 @@
     "@react-spring/shared" "~9.2.0"
     "@react-spring/types" "~9.2.0"
 
+"@tailwindcss/line-clamp@^0.2.2":
+  "integrity" "sha512-NgA4Ds+/eCiO+6O3SooRsfJ8m7M2+QvNvHwOjBQq7FIYoWwAV4I4Wu4fjHeuO9Yi6p47ceHUKEGGEBh0ozQodg=="
+  "resolved" "https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.2.2.tgz"
+  "version" "0.2.2"
+
 "@trysound/sax@0.1.1":
   "integrity" "sha512-Z6DoceYb/1xSg5+e+ZlPZ9v0N16ZvZ+wYMraFue4HYrE4ttONKtsvruIRf6t9TBR0YvSOfi1hUU0fJfBLCDYow=="
   "resolved" "https://registry.npmjs.org/@trysound/sax/-/sax-0.1.1.tgz"
@@ -5597,7 +5602,7 @@
     "csso" "^4.2.0"
     "stable" "^0.1.8"
 
-"tailwindcss@^2.2.9":
+"tailwindcss@^2.2.9", "tailwindcss@>=2.0.0 || >=3.0.0-alpha.1":
   "integrity" "sha512-P8zCKFkEthfUvqcnun8DqGGXw4QqyDw971NAM23e8QQ+m5HW1agp4upq50rFGwGNtphVYvr+0zvVLSXo5/I9Qg=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-2.2.9.tgz"
   "version" "2.2.9"

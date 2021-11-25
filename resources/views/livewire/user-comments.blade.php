@@ -12,13 +12,13 @@
                         </div>
                         <div>
                             <header class="mb-4">
-                                <h3 class="font-bold">{{ $comment->author->username }}</h3>
+                                <h3 class="font-bold"><a href="/profile/{{ $comment->author->username }}">{{ $comment->author->username }}</a></h3>
                                 <p class="text-xs">
                                     Postato
                                     <time>{{ $comment->created_at->diffForHumans() }}</time>
                                 </p>
                             </header>
-                            <p class="leading-tight break-all">
+                            <p class="leading-tight break-all line-clamp-2">
                                 {{ $comment->body }}
                             </p>
                         </div>

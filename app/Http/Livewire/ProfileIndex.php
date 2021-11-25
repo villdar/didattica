@@ -85,7 +85,8 @@ class ProfileIndex extends Component
         }
 
         if (!empty($this->password)) {
-            $data = array_merge($data, ['password' => Hash::make($this->password)]);
+            $data = array_merge($data, ['password' => $this->password]);
+            // dd(bcrypt($this->password));
         }
 
         if (count($data)) {
