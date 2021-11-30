@@ -3,6 +3,7 @@ import '../../css/app.css';
 import React, { useState } from 'react';
 import ReactDOM, { render } from 'react-dom';
 import axios from 'axios';
+import Radium, { StyleRoot } from 'radium';
 
 
 function App(props) {
@@ -25,6 +26,16 @@ function App(props) {
         category.posts_count
     ))
 
+    const style = {
+      // Adding media querry..
+      '@media (max-width: 600px)': {
+        height: '400px',
+      },
+      '@media (min-width: 992px)': {
+        height: '830px',
+      },
+    };
+
 
     // function listToMatrix(list) {
     //     var matrix = [];
@@ -39,11 +50,12 @@ function App(props) {
 	//     return matrix;
     // }
 
+
+
     var matrix = counts.map((el, i) => [...counts].fill(0).fill(el, i, i + 1));
 
     function hideOnClick(id) {
       setHide({value: id})
-      console.log(id);
       const body = {
           'chordId' : id,
       }
@@ -52,7 +64,6 @@ function App(props) {
       // window.location.reload()
       axios.post(url, body)
       .then(function(response){
-            console.log(response.data);
             // Create a new element
             var newNode = document.createElement('div');
 
@@ -87,11 +98,13 @@ function App(props) {
     }
 
   return (
-    <div className="App">
-        <div style={{ height: 800 }}>
-            <Chord hideOnClick={hideOnClick} keys={keys} colors={colors} matrix={matrix}/>
+      <StyleRoot>
+        <div className="App">
+            <div style={style}>
+                <Chord hideOnClick={hideOnClick} keys={keys} colors={colors} matrix={matrix}/>
+            </div>
         </div>
-    </div>
+      </StyleRoot>
   )
 }
 

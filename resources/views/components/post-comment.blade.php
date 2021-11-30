@@ -8,8 +8,13 @@
         </div>
         <div>
             <header class="mb-4">
-                <h3 class="font-bold"><a href="/profile/{{ $comment->author->username }}">{{ $comment->author->username }}</a></h3>
-
+                <div class="flex items-center space-x-2">
+                    <h3 class="font-bold"><a href="/profile/{{ $comment->author->username }}">{{ $comment->author->username }}</a></h3>
+                    <div class="font-semibold text-gray-400">&bull;</div>
+                    <p class="text-xs text-blue-400">{{ ucfirst($comment->author->profession) }}</p>
+                    <div class="font-semibold text-gray-400">&bull;</div>
+                    <p class="text-xs text-blue-400">{{ ucfirst($comment->author->role) }}</p>
+                </div>
                 <p class="text-xs">
                     Postato
                     <time>{{ $comment->created_at->diffForHumans() }}</time>

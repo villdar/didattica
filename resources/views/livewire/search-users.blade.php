@@ -15,6 +15,9 @@
                                     Username
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    Professione
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                     Iscritto il
                                 </th>
                                 <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
@@ -40,7 +43,7 @@
                                                 <div class="text-sm font-medium text-gray-900">
                                                     {{ $user->name }}
                                                 </div>
-                                                <div class="text-sm text-gray-500">
+                                                <div class="text-xs text-gray-500">
                                                     {{ $user->email }}
                                                 </div>
                                             </div>
@@ -48,6 +51,12 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900 hover:text-blue-500"><a href="/profile/{{ $user->username }}">{{ $user->username }}</a></div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="ml-4">
+                                            <div class="text-sm text-gray-900">{{ ucfirst($user->profession) }}</div>
+                                            <div class="text-xs text-gray-500">{{ ucfirst($user->role) }}</div>
+                                        </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{ $user->created_at->diffForHumans() }}</div>
