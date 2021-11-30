@@ -55,7 +55,7 @@
                                                                         <x-form.edit.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
                                                                     </div>
 
-                                                                    <img src="{{ asset('public/storage/' . $post->thumbnail) }}" alt="" class="mr-6 rounded-xl" width="150">
+                                                                    <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="mr-6 rounded-xl" width="150">
                                                                 </div>
 
 
