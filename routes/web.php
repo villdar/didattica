@@ -36,6 +36,6 @@ Route::middleware('can:admin')->group(function () {
 
 //Download guide utente e admin
 Route::get('download/{filename}', function ($filename) {
-    $file = storage_path('public') . '/public/storage/'.'download'.'/' . $filename; // or wherever you have stored your PDF files
+    $file = storage_path('/public/storage/download/'. $filename); // or wherever you have stored your PDF files
     return response()->download($file);
 });
