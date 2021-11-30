@@ -87,11 +87,11 @@
 
                         @admin
                         <hr>
-                        <x-dropdown-item href="{{ asset('storage/' . 'ManualeAmministratore.pdf') }}">
+                        <x-dropdown-item href="{{ asset('/public/storage/download/' . 'ManualeAmministratore.pdf') }}">
                             Guida per l'admin
                         </x-dropdown-item>
                         @endadmin
-                        <x-dropdown-item href="{{ asset('storage/' . 'ManualeUtente.pdf') }}">
+                        <x-dropdown-item href="{{ asset('/public/storage/download/' . 'ManualeUtente.pdf') }}">
                             Guida per l'utente
                         </x-dropdown-item>
                         <hr>
