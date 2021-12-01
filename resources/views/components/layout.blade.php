@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -18,8 +19,6 @@
 
 <!-- include libraries(jQuery) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-
 <style>
     html {
         scroll-behavior: smooth;
@@ -47,6 +46,13 @@
 
 </style>
 
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset("apple-touch-icon.png") }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset("favicon-32x32.png") }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset("favicon-16x16.png") }}">
+    <link rel="manifest" href="{{ asset("site.webmanifest") }}">
+</head>
+
 <body style="font-family: 'Montserrat', sans-serif" id="didattica">
     <section class="px-6 py-2">
         <nav class="md:flex md:justify-between md:items-center">
@@ -66,8 +72,7 @@
                         </x-slot>
 
                         <x-dropdown-item
-                                         href="{{ route('profile') }}"
-                                         >
+                                         href="{{ route('profile') }}">
                             Profilo
                         </x-dropdown-item>
 
@@ -145,22 +150,22 @@
                                 <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
                             <input
-                                    name="email"
-                                    type="text"
-                                    placeholder="La tua mail"
-                                    class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
-                                </div>
+                                   name="email"
+                                   type="text"
+                                   placeholder="La tua mail"
+                                   class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
+                        </div>
 
-                                <button type="submit"
+                        <button type="submit"
                                 class="px-8 py-3 mt-4 text-xs font-semibold text-white uppercase transition-colors duration-300 bg-blue-500 rounded-full hover:bg-blue-600 lg:mt-0 lg:ml-3">
-                                Iscriviti
-                            </button>
-                        </form>
-                    </div>
+                            Iscriviti
+                        </button>
+                    </form>
                 </div>
-                @error('email')
-                    <span class="text-xs text-red-500">{{ $message }}</span>
-                @enderror
+            </div>
+            @error('email')
+                <span class="text-xs text-red-500">{{ $message }}</span>
+            @enderror
         </footer>
     </section>
 
