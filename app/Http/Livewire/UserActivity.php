@@ -6,7 +6,13 @@ use Livewire\Component;
 
 class UserActivity extends Component
 {
-    public bool $toggleA = false;
+    public $ActivityFilter = ['Likes', 'Comments'];
+
+    public function setFilter($newFilter)
+    {
+        $this->ActivityFilter = $newFilter;
+        $this->emit('queryStringUpdatedActivityFilter', $this->ActivityFilter);
+    }
 
     public function render()
     {

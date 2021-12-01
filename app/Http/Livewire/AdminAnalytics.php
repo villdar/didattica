@@ -7,7 +7,13 @@ use Livewire\Component;
 
 class AdminAnalytics extends Component
 {
-    public bool $toggleA = true;
+    public $ActivityFilter = ['Tools', 'Users'];
+
+    public function setFilter($newFilter)
+    {
+        $this->ActivityFilter = $newFilter;
+        $this->emit('queryStringUpdatedActivityFilter', $this->ActivityFilter);
+    }
 
     public function render()
     {
