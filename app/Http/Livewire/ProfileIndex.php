@@ -16,7 +16,7 @@ class ProfileIndex extends Component
     public $role;
     public $linkedin;
     public $personalSite;
-    public $password;
+    public $password = '';
     public $password_confirmation;
 
     public $current_hashed_password;
