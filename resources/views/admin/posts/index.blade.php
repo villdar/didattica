@@ -32,8 +32,7 @@
                                                      x-transition:leave-start="transform opacity-100 scale-100"
                                                      x-transition:leave-end="transform opacity-0 scale-95"
                                                      class="fixed top-0 left-0 z-10 flex items-center w-full h-full overflow-y-auto shadow-lg"
-                                                     x-cloak
-                                                     >
+                                                     x-cloak>
                                                     <div class="fixed inset-0 bg-gray-800 opacity-20" @click="isEditModalVisible = false"></div>
                                                     <div class="container fixed inset-0 py-6 mx-auto overflow-y-auto rounded-lg lg:px-32">
                                                         <div class="rounded bg-gray-50">
