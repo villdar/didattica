@@ -49,7 +49,7 @@
                     <div
                          x-show="!excerpt"
                          x-cloak
-                         class="p-1 mt-3 mr-1 text-gray-600 cursor-pointer line-clamp-3" @click="excerpt = !excerpt">
+                         class="p-1 mt-3 mr-1 text-gray-600 line-clamp-3" @click="excerpt = !excerpt">
                         {{ $post->excerpt }}
                     </div>
                     <div
