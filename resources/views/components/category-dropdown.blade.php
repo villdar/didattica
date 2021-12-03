@@ -1,7 +1,7 @@
 <x-dropdown>
     <x-slot name="trigger">
         <button class="flex w-full py-2 pl-3 text-sm font-semibold text-left pr-9 lg:w-48 lg:inline-flex">
-            {{ isset($currentCategory) ? ucwords($currentCategory->name) : 'Categorie' }}
+            {{ isset($currentCategory) ? $currentCategory->name : 'Categorie' }}
 
             <x-icon name="down-arrow" class="absolute pointer-events-none" style="right: 12px;"/>
         </button>
@@ -19,7 +19,7 @@
             href="/?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}"
             :active='request()->fullUrlIs("*?category={$category->slug}*")'
         >
-            {{ ucwords($category->name) }}
+            {{ $category->name }}
         </x-dropdown-item>
     @endforeach
 </x-dropdown>
