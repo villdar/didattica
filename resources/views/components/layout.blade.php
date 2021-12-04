@@ -138,34 +138,35 @@
                 class="px-10 py-16 mt-16 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
             <h5 class="text-3xl">Rimani aggiornato sui nuovi strumenti per la didattica.</h5>
             <p class="mt-3 text-sm">Promettiamo di non intasarti la mail con spam :)</p>
-
-            <div class="mt-10">
-                <div class="relative inline-block mx-auto rounded-full lg:bg-gray-200">
-
-                    <form method="POST" action="/newsletter" class="text-sm lg:flex">
-                        @csrf
-
-                        <div class="flex items-center lg:py-3 lg:px-5">
-                            <label for="email" class="hidden lg:inline-block">
-                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
-                            </label>
-                            <input
-                                   name="email"
-                                   type="text"
-                                   placeholder="La tua mail"
-                                   class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
-                        </div>
-
-                        <button type="submit"
-                                class="px-8 py-3 mt-4 text-xs font-semibold text-white uppercase transition-colors duration-300 bg-blue-500 rounded-full hover:bg-blue-600 lg:mt-0 lg:ml-3">
-                            Iscriviti
-                        </button>
-                    </form>
+                <div class="mt-10">
+                    <div class="relative inline-block mx-auto rounded-full lg:bg-gray-200">
+                        <form method="POST" action="/newsletter" class="text-sm lg:flex">
+                            @csrf
+                            <div class="flex items-center lg:py-3 lg:px-5">
+                                <label for="email" class="hidden lg:inline-block">
+                                    <img src="/images/mailbox-icon.svg" alt="mailbox letter">
+                                </label>
+                                <input
+                                       name="email"
+                                       type="text"
+                                       placeholder="La tua mail"
+                                       class="py-2 pl-4 lg:bg-transparent lg:py-0 focus-within:outline-none">
+                            </div>
+                            <button type="submit"
+                                    class="px-8 py-3 mt-4 text-xs font-semibold text-white uppercase transition-colors duration-300 bg-blue-500 rounded-full hover:bg-blue-600 lg:mt-0 lg:ml-3">
+                                Iscriviti
+                            </button>
+                        </form>
+                    </div>
+                    <div class="hidden float-left lg:block pl-14">
+                        <a href="https://www.digitalocean.com/?refcode=3be836e0be2d&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg" alt="DigitalOcean Referral Badge" /></a>
+                    </div>
                 </div>
-            </div>
-            @error('email')
-                <span class="text-xs text-red-500">{{ $message }}</span>
-            @enderror
+                @error('email')
+                    <span class="text-xs text-red-500">{{ $message }}</span>
+                @enderror
+
+
         </footer>
     </section>
 
