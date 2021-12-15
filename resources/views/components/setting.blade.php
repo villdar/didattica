@@ -20,12 +20,24 @@
                 <li>
                     <a href="/admin/posts/analytics" class="{{ request()->is('admin/posts/analytics') ? 'text-blue-500' : '' }}">Statistiche applicativo</a>
                 </li>
+                <li>
+                    <a href="/admin/posts/tags" class="{{ request()->is('admin/posts/tags') ? 'text-blue-500' : '' }}">Tag</a>
+                </li>
             </ul>
         </aside>
 
         <main class="flex-1 max-w-6xl">
             <x-panel>
                 {{ $slot }}
+
+                <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+                <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+                <script type="text/javascript">
+                    $('.js-example-basic-single').select2({
+                        placeholder: 'Seleziona i tag'
+                    });
+                </script>
             </x-panel>
         </main>
     </div>

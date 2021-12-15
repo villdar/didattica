@@ -23,7 +23,6 @@
                                 </path>
                             </g>
                         </svg>
-
                         Torna indietro
                     </a>
 

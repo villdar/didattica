@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use App\Exceptions\DuplicateVoteException;
 use App\Exceptions\VoteNotFoundException;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Post extends Model
 {
     use HasFactory;
-
 
     protected $with = ['category', 'author'];
 
@@ -37,12 +37,12 @@ class Post extends Model
         );
 
         $query->when(
-            $filters['author'] ?? false,
-            fn ($query, $author) =>
+            $filters['tags'] ?? false,
+            fn ($query, $tags) =>
                     $query->whereHas(
-                        'author',
+                        'tags',
                         fn ($query) =>
-                        $query->where('username', $author)
+                        $query->where('slug', $tags)
                     )
         );
     }
@@ -65,6 +65,11 @@ class Post extends Model
     public function votes()
     {
         return $this->belongsToMany(User::class, 'votes');
+    }
+
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany(Tag::class, 'post_tag');
     }
 
     public function isVotedByUser(?User $user)

@@ -45,20 +45,15 @@
                         <x-category-button :category="$post->category" />
                     </div>
                 </div>
-                <div x-data="{ excerpt: false}" class="m-2">
+                <div x-data="{ excerpt: false}" class="p-1 m-2 mt-3 mr-2 text-gray-600">
                     <div
-                         x-show="!excerpt"
                          x-cloak
-                         class="p-1 mt-3 mr-1 text-gray-600 line-clamp-3" @click="excerpt = !excerpt">
+                         :class="{ 'line-clamp-3' : !excerpt , 'line-clamp-none' : excerpt }" @click="excerpt = !excerpt">
                         {{ $post->excerpt }}
                     </div>
-                    <div
-                         x-if="!excerpt"
-                         x-cloak
-                         class="p-1 mt-3 text-gray-600"
-                        >
-                        {{ $post->excerpt }}
-                    </div>
+                </div>
+                <div class="mt-2 md:mr-5">
+                    <x-tag-button :tags="$post->tags" />
                 </div>
                 <div class="flex flex-col justify-between mt-6 md:flex-row md:items-center">
                     <div class="flex items-center space-x-0.5 text-xs font-semibold text-gray-400 md:space-x-1">

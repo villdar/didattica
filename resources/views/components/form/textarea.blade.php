@@ -3,8 +3,7 @@
 <x-form.field>
     <x-form.label name="{{ $name }}" />
     <textarea
-    {{-- {{ $attributes->class(['border border-gray-200 p-2 w-10/12 rounded px-8']) }} --}}
-    class="w-full p-2 px-8 border border-gray-200 rounded"
+    {{ $attributes->class(['border border-gray-200 p-2 w-full rounded px-8']) }}
     name="{{ $name }}"
     required
     {{ $attributes }}>{{ $slot ?? old($name) }}</textarea>

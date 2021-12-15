@@ -5,8 +5,8 @@
             @method('POST')
             <x-form.input name="title" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- il nome dello strumento</span>
-            <x-form.input name="slug" required />
-            <span class="mb-6 text-xs text-gray-600 uppercase">- url dello strumento</span>
+            {{-- <x-form.input name="slug" required />
+            <span class="mb-6 text-xs text-gray-600 uppercase">- url dello strumento</span> --}}
             <x-form.input name="thumbnail" type="file" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- immagine dello strumento</span>
             <x-form.textarea name="excerpt" required />
@@ -24,7 +24,7 @@
                 <x-form.label name="category" />
 
                 <select name="category_id" id="category_id" required>
-                    @foreach (\App\Models\Category::all() as $category)
+                    @foreach ($categories as $category)
                         <option
                                 value="{{ $category->id }}"
                                 {{ old('category_id') == $category->id ? 'selected' : '' }}>{{ ucwords($category->name) }}</option>
@@ -34,6 +34,15 @@
                 <x-form.error name="category" />
             </x-form.field>
             <span class="mb-6 text-xs text-gray-600 uppercase">- categoria dello strumento</span>
+            <x-form.label name="tags" />
+            <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post" required multiple="multiple">
+                @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}">{{ ucwords($tag->name) }}</option>
+                @endforeach
+            </select>
+            <x-form.error name="tags" />
+
+            <span class="mb-6 text-xs text-gray-600 uppercase">- tags dello strumento</span>
 
 
             <x-form.button>Pubblica</x-form.button>
