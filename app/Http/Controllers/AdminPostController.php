@@ -52,7 +52,7 @@ class AdminPostController extends Controller
             $image = $request->file('thumbnail');
             $imageName = $image->getClientOriginalName();
             $imageNewName = explode('_', $imageName)[0];
-            $fileExtention = time() . '_' . $imageNewName . '.' . $image->getClientOriginalExtension();
+            $fileExtention = time() . '_' . $imageNewName;
             $location = storage_path('app/public/' . $fileExtention);
             Image::make($image)->resize(280, 140)->save($location);
             $post->thumbnail = $fileExtention;
@@ -95,7 +95,7 @@ class AdminPostController extends Controller
             $image          = $request->file('thumbnail');
             $imageName      = $image->getClientOriginalName();
             $imageNewName   = explode('-', $imageName)[0];
-            $fileExtention  = time() . '_' . $imageNewName . '.' . $image->getClientOriginalExtension();
+            $fileExtention  = time() . '_' . $imageNewName;
             $location       = storage_path('app/public/' . $fileExtention);
             Image::make($image)->resize(280, 140)->save($location);
             $post->thumbnail = $fileExtention;
