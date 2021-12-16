@@ -5,7 +5,7 @@
                 <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/create') ? 'text-blue-500' : '' }}">
                     <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Crea</a>
                 </li>
-                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/') ? 'text-blue-500' : '' }}">
+                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags') ? 'text-blue-500' : '' }}">
                     <a href="{{ route('tags.index') }}" class="hover:text-blue-500">Indice</a>
                 </li>
             </ul>
