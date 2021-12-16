@@ -2,11 +2,11 @@
     <x-setting heading="Tag">
         <nav class="grid justify-center p-4 mb-5 text-xs text-gray-400 md:flex">
             <ul class="flex pb-3 space-x-10 font-semibold uppercase border-b-4">
-                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/create') ? 'text-blue-500' : '' }}">
-                    <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Crea</a>
-                </li>
                 <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags') ? 'text-blue-500' : '' }}">
                     <a href="{{ route('tags.index') }}" class="hover:text-blue-500">Indice</a>
+                </li>
+                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/create') ? 'text-blue-500' : '' }}">
+                    <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Crea</a>
                 </li>
             </ul>
         </nav>
