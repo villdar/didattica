@@ -33,16 +33,18 @@
                 </select>
                 <x-form.error name="category" />
             </x-form.field>
-            <x-form.label name="tags" />
-            <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post" required multiple="multiple" >
-                @foreach ($tags as $tag)
-                    <option value="{{ $tag->id }}" @if (in_array($tag->id, $oldTags))
-                        selected
-                @endif
-                >{{ $tag->name }}</option>
-                @endforeach
-            </select>
-            <span class="mb-6 text-xs text-gray-600 uppercase">- tags dello strumento</span>
+            <x-form.field>
+                <x-form.label name="tags" />
+                <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post" required multiple="multiple" >
+                    @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}" @if (in_array($tag->id, $oldTags))
+                            selected
+                    @endif
+                    >{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+                <span class="mb-6 text-xs text-gray-600 uppercase">- tags dello strumento</span>
+            </x-form.field>
 
             <x-form.button>Aggiorna</x-form.button>
         </form>
