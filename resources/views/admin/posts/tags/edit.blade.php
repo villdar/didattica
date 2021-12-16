@@ -8,8 +8,8 @@
                 <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags') ? 'text-blue-500' : '' }}">
                     <a href="{{ route('tags.index') }}" class="hover:text-blue-500">Indice</a>
                 </li>
-                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/{{ $tag->slug }}/edit') ? 'text-blue-500' : '' }}">
-                    <label class="hover:text-blue-500">Modifica</label>
+                <li class="text-blue-500">
+                    <label class="hover:text-blue-400">Modifica</label>
                 </li>
             </ul>
         </nav>
