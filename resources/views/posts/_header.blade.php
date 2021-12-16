@@ -3,7 +3,7 @@
         <span class="text-blue-500">didattic@</span>
     </h1>
 
-    <div class="mt-4 space-y-2 lg:space-y-0 lg:space-x-4 w-max">
+    <div class="mt-4 space-y-2 lg:space-y-0 lg:space-x-4 lg:w-max">
         <div class="relative bg-gray-100 lg:inline-flex rounded-xl">
             <x-category-dropdown />
         </div>
