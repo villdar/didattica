@@ -12,7 +12,7 @@
                     <x-form.input name="thumbnail" type="file" :value="old('thumbnail', $post->thumbnail)" />
                 </div>
 
-                <img src="{{ asset('storage/thumbnails' . $post->thumbnail) }}" alt="" class="w-2/4 ml-6 lg:w-2/12 rounded-xl">
+                <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="w-2/4 ml-6 lg:w-2/12 rounded-xl">
             </div>
 
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
