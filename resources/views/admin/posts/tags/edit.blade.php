@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting heading="Mofica {{ $tag->name }}">
+    <x-setting heading="Modifica {{ $tag->name }}">
         <nav class="grid justify-center p-4 mb-5 text-xs text-gray-400 md:flex">
             <ul class="flex pb-3 space-x-10 font-semibold uppercase border-b-4">
                 <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/create') ? 'text-blue-500' : '' }}">
