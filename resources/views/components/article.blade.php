@@ -45,7 +45,7 @@
                         <x-category-button :category="$post->category" />
                     </div>
                 </div>
-                <div x-data="{ excerpt: false}" class="p-1 m-2 mt-3 mr-2 text-gray-600">
+                <div x-data="{ excerpt: false}" class="p-2 m-2 mt-3 mr-2 text-gray-600">
                     <div
                          x-cloak
                          :class="{ 'line-clamp-3' : !excerpt , 'line-clamp-none' : excerpt }" @click="excerpt = !excerpt">

@@ -17,16 +17,16 @@
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                         Nome
                                     </th>
-                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                         Categoria
                                     </th>
-                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                        Slug
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+                                        Numero post
                                     </th>
-                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                    <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                         Azioni
                                     </th>
                                 </tr>
@@ -34,17 +34,22 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($tags as $tag)
                                     <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap">
+                                        <td class="px-6 py-4 text-left whitespace-nowrap">
                                             {{ $tag->name }}
+                                            <div class="text-xs text-gray-400">
+                                                {{ $tag->slug }}
+                                            </div>
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $tag->category_id }}
+                                        <td class="px-6 py-4 text-center whitespace-nowrap">
+                                            {{ $tag->category->name }}
+                                            <div class="border-2 opacity-75 rounded-xl" style="border-color: {{ $tag->category->style }}">
+                                            </div>
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap">
-                                            {{ $tag->slug }}
+                                        <td class="px-6 py-4 text-center whitespace-nowrap">
+                                            {{ $tag->posts->count() }}
                                         </td>
-                                        <td class="px-2 py-4 text-sm text-gray-500 whitespace-nowrap">
-                                            <div class="flex justify-start space-x-1">
+                                        <td class="px-2 py-4 pr-6 text-sm text-gray-500 whitespace-nowrap">
+                                            <div class="flex justify-end space-x-5">
                                                 <a href="{{ route('tags.edit', $tag) }}" class="p-1">
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 text-blue-500">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
