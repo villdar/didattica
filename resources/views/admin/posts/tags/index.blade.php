@@ -5,9 +5,11 @@
                 <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/create') ? 'text-blue-500' : '' }}">
                     <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Crea</a>
                 </li>
+                <li class="hover:text-blue-400 {{ request()->is('admin/posts/tags/') ? 'text-blue-500' : '' }}">
+                    <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Indice</a>
+                </li>
             </ul>
         </nav>
-        <a href="{{ route('tags.create') }}" class="hover:text-blue-500">Crea</a>
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
