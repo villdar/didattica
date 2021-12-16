@@ -5,9 +5,11 @@
             <li class="hover:text-blue-400 @if ($ActivityFilter === "Users") text-blue-400 @endif"><label wire:click.prevent="setFilter('Users')">Utenti</label></li>
         </ul>
     </nav>
-    @if ($ActivityFilter === "Tools")
-        <livewire:search-posts />
-    @else
-        <livewire:search-users />
-    @endif
+    <div class="p-2">
+        @if ($ActivityFilter === "Tools")
+            <livewire:search-posts />
+        @else
+            <livewire:search-users />
+        @endif
+    </div>
 </div>
