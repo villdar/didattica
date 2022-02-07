@@ -58,7 +58,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="{{ asset("suffp-logo.png") }}" alt="SUFFP" width="165" height="165">
+                    <img src="{{ asset("suffp-logo.png") }}" alt="SUFFP" width="200">
                 </a>
             </div>
 
