@@ -58,7 +58,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="https://www.suffp.swiss/sites/all/themes/onecms/logo-it.svg" alt="SUFFP" width="165" height="16">
+                    <img src="{{ asset("suffp.png") }}" alt="SUFFP" width="165" height="16">
                 </a>
             </div>
 
