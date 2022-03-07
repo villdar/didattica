@@ -54,6 +54,7 @@
                             </div>
                         @endforeach
 
+
                     </div>
                     <div class="right-0 w-1/2 space-y-4 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
