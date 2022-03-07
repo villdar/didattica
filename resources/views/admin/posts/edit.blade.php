@@ -17,10 +17,10 @@
 
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
             <div class="flex space-x-1">
-                <x-form.textarea name="pros" class="summernote" required>{{ old('pros', $post->pros) }}</x-form.textarea>
-                <x-form.textarea name="cons" class="summernote" required>{{ old('cons', $post->cons) }}</x-form.textarea>
+                <x-form.textarea name="pros" cols="60" required>{{ old('pros', $post->pros) }}</x-form.textarea>
+                <x-form.textarea name="cons" cols="60" required>{{ old('cons', $post->cons) }}</x-form.textarea>
             </div>
-            <x-form.textarea name="body" class="summernote" required>{{ old('body', $post->body) }}</x-form.textarea>
+            <x-form.textarea name="body" required>{{ old('body', $post->body) }}</x-form.textarea>
 
             <x-form.field>
                 <x-form.label name="category" />

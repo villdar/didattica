@@ -12,17 +12,16 @@
             <x-form.textarea name="excerpt" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- percorso didattico dello strumento</span>
             <div class="flex space-x-2">
-                <x-form.edit.editor name="pros" class="summernote" required />
-                <x-form.edit.editor name="cons" class="summernote" required />
+                <x-form.textarea cols="60" name="pros" required />
+                <x-form.textarea cols="60" name="cons" required />
             </div>
-            <span class="mb-6 text-xs text-gray-600 uppercase">- pro e contro dello strumento</span>
+            <span class="mb-6 text-xs text-gray-600 uppercase">- pro e contro dello strumento, dividerli tramite una virgola <strong>(,)</strong></span>
 
-            <x-form.textarea name="body" id="summernote" required />
+            <x-form.textarea name="body" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- testo dello strumento</span>
 
             <x-form.field>
                 <x-form.label name="category" />
-
                 <select name="category_id" id="category_id" required>
                     @foreach ($categories as $category)
                         <option

@@ -1,6 +1,6 @@
 <x-layout>
-    <main class="max-w-6xl mx-auto mt-10 space-y-6 lg:mt-20">
-        <article class="max-w-4xl mx-auto lg:grid lg:grid-cols-12 gap-x-10">
+    <main class="max-w-full mx-auto mt-10 space-y-6 lg:mt-20">
+        <article class="max-w-6xl mx-auto lg:grid lg:grid-cols-12 gap-x-6">
             <div class="col-span-4 mb-10 lg:text-center lg:pt-14">
                 <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="rounded-xl">
 
@@ -31,43 +31,57 @@
                     </div>
                 </div>
 
-                <h1 class="mb-10 text-3xl font-bold lg:text-4xl">
+
+
+                <h1 class="text-3xl font-bold lg:text-4xl">
                     {{ $post->title }}
                 </h1>
+                @admin()
+                    <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
+                @endadmin
 
                 <div class="flex p-2 m-3 mb-8 space-x-4 text-center rounded-lg shadow-lg">
                     <div class="left-0 w-1/2 space-y-4 ">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
-                        <div class="flex">
-                            <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="pl-2 text-sm text-gray-500">
-                                {!! $post->pros !!}
-                            </span>
-                        </div>
+                        @foreach (explode(',', $post->pros) as $pro)
+                            <div class="flex">
+                                <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="pl-2 text-sm text-gray-500">
+                                    {{ $pro }}
+                                </span>
+                            </div>
+                        @endforeach
+
                     </div>
                     <div class="right-0 w-1/2 space-y-4 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
-                        <div class="flex">
-                            <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="pl-2 text-sm text-gray-500">
-                                {!! $post->cons !!}
-                            </span>
-                        </div>
+                        @foreach (explode(',', $post->cons) as $con)
+                            <div class="flex">
+                                <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="pl-2 text-sm text-gray-500">
+                                    {{ $con }}
+                                </span>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <div class="space-y-4 leading-loose lg:text-lg">{!! $post->body !!}</div>
+                @foreach (explode("\r\n", $post->body) as $text)
+                <div class="m-2">
+                    <div class="space-y-4 leading-loose lg:text-lg">{{ $text }}</div>
+                </div>
+                @endforeach
                 <article class="py-3 mt-4 bg-white">
-                    <livewire:post-votes :post="$post" :votesCount="$votesCount"/>
+                    <livewire:post-votes :post="$post" :votesCount="$votesCount" />
                 </article>
             </div>
 
             <section class="col-span-8 col-start-5 mt-10 space-y-6">
-                @include ('posts._add-comment-form')
+                @include('posts._add-comment-form')
 
                 @foreach ($post->comments as $comment)
                     <x-post-comment :comment="$comment" />
