@@ -37,33 +37,31 @@
                     {{ $post->title }}
                 </h1>
                 @admin()
-                    <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
+                <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
                 @endadmin
 
-                <div class="flex p-2 m-3 mb-8 space-x-4 text-center rounded-lg shadow-lg">
-                    <div class="left-0 w-1/2 space-y-1 ">
+                <div class="flex p-2 mb-8 space-x-4 rounded-lg shadow-lg">
+                    <div class="w-1/2 space-y-1">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
                         @foreach (explode("\r\n", $post->pros) as $pro)
-                            <div class="flex">
-                                <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="flex space-x-1">
+                                <svg class="text-green-500" width="50" height="50" fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                <span class="pl-2 text-sm text-gray-500">
+                                <span class="text-sm text-gray-500">
                                     {{ $pro }}
                                 </span>
                             </div>
                         @endforeach
-
-
                     </div>
-                    <div class="right-0 w-1/2 space-y-1 ">
+                    <div class="w-1/2 space-y-1 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
                         @foreach (explode("\r\n", $post->cons) as $con)
                             <div class="flex">
-                                <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="text-red-500" width="50" height="50" fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                <span class="pl-2 text-sm text-gray-500">
+                                <span class="text-sm text-gray-500">
                                     {{ $con }}
                                 </span>
                             </div>
@@ -72,9 +70,9 @@
                 </div>
 
                 @foreach (explode("\r\n", $post->body) as $text)
-                <div class="m-2">
-                    <div class="space-y-4 leading-loose lg:text-lg">{!! $text !!}</div>
-                </div>
+                    <div class="m-2">
+                        <div class="space-y-4 leading-loose lg:text-lg">{!! $text !!}</div>
+                    </div>
                 @endforeach
                 <article class="py-3 mt-4 bg-white">
                     <livewire:post-votes :post="$post" :votesCount="$votesCount" />
