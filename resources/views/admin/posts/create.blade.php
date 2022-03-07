@@ -15,7 +15,7 @@
                 <x-form.textarea cols="60" name="pros" required />
                 <x-form.textarea cols="60" name="cons" required />
             </div>
-            <span class="mb-6 text-xs text-gray-600 uppercase">- pro e contro dello strumento, dividerli tramite una virgola <strong>(,)</strong></span>
+            <span class="mb-6 text-xs text-gray-600 uppercase">- pro e contro dello strumento, dividerli andando a capo.</span>
 
             <x-form.textarea name="body" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- testo dello strumento</span>

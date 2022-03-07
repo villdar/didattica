@@ -43,7 +43,7 @@
                 <div class="flex p-2 m-3 mb-8 space-x-4 text-center rounded-lg shadow-lg">
                     <div class="left-0 w-1/2 space-y-4 ">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
-                        @foreach (explode(',', $post->pros) as $pro)
+                        @foreach (explode("\r\n", $post->pros) as $pro)
                             <div class="flex">
                                 <svg class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -58,7 +58,7 @@
                     </div>
                     <div class="right-0 w-1/2 space-y-4 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
-                        @foreach (explode(',', $post->cons) as $con)
+                        @foreach (explode("\r\n", $post->cons) as $con)
                             <div class="flex">
                                 <svg class="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
