@@ -41,7 +41,7 @@
                 @endadmin
 
                 <div class="flex p-2 m-3 mb-8 space-x-4 text-center rounded-lg shadow-lg">
-                    <div class="left-0 w-1/2 space-y-4 ">
+                    <div class="left-0 w-1/2 space-y-1 ">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
                         @foreach (explode("\r\n", $post->pros) as $pro)
                             <div class="flex">
@@ -56,7 +56,7 @@
 
 
                     </div>
-                    <div class="right-0 w-1/2 space-y-4 ">
+                    <div class="right-0 w-1/2 space-y-1 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
                         @foreach (explode("\r\n", $post->cons) as $con)
                             <div class="flex">
