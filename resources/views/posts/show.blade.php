@@ -73,7 +73,7 @@
 
                 @foreach (explode("\r\n", $post->body) as $text)
                 <div class="m-2">
-                    <div class="space-y-4 leading-loose lg:text-lg">{{ $text }}</div>
+                    <div class="space-y-4 leading-loose lg:text-lg">{!! $text !!}</div>
                 </div>
                 @endforeach
                 <article class="py-3 mt-4 bg-white">
