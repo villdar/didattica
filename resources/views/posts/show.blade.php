@@ -43,29 +43,33 @@
                 <div class="flex p-2 mt-3 mb-8 space-x-4 rounded-lg shadow-lg">
                     <div class="w-1/2 space-y-1">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
-                        @foreach (explode("\r\n", $post->pros) as $pro)
-                            <div class="flex mt-2">
-                                <svg class="w-1/4 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span class="w-3/4 text-sm text-gray-500">
-                                    {{ $pro }}
-                                </span>
-                            </div>
-                        @endforeach
+                        <div class="p-3 mt-2">
+                            @foreach (explode("\r\n", $post->pros) as $pro)
+                                <div class="flex">
+                                    <svg class="w-1/4 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="w-3/4 text-sm text-gray-500">
+                                        {{ $pro }}
+                                    </span>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                     <div class="w-1/2 space-y-1 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
-                        @foreach (explode("\r\n", $post->cons) as $con)
-                            <div class="flex mt-2">
-                                <svg class="w-1/4 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <span class="w-3/4 text-sm text-gray-500">
-                                    {{ $con }}
-                                </span>
-                            </div>
-                        @endforeach
+                        <div class="p-3 mt-2">
+                            @foreach (explode("\r\n", $post->cons) as $con)
+                                <div class="flex mt-2">
+                                    <svg class="w-1/4 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="w-3/4 text-sm text-gray-500">
+                                        {{ $con }}
+                                    </span>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
