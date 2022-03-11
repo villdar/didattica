@@ -1,8 +1,8 @@
 <x-layout>
     <main class="max-w-full mx-auto mt-10 space-y-6 lg:mt-20">
         <article class="max-w-6xl mx-auto lg:grid lg:grid-cols-12 gap-x-6">
-            <div class="col-span-4 mb-10 lg:text-center lg:pt-14">
-                <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="rounded-xl">
+            <div class="col-span-3 mb-10 lg:text-center lg:pt-14">
+                <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="object-scale-down w-full h-40 rounded-xl">
 
                 <p class="block mt-4 text-xs text-gray-400">
                     Pubblicato
@@ -10,7 +10,7 @@
                 </p>
             </div>
 
-            <div class="col-span-8">
+            <div class="col-span-9">
                 <div class="justify-between hidden mb-6 lg:flex">
                     <a href="{{ $backUrl }}"
                        class="relative inline-flex items-center text-lg transition-colors duration-300 hover:text-blue-500">
@@ -40,11 +40,11 @@
                 <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
                 @endadmin
 
-                <div class="flex p-2 mb-8 space-x-4 rounded-lg shadow-lg">
+                <div class="flex p-2 mt-3 mb-8 space-x-4 rounded-lg shadow-lg">
                     <div class="w-1/2 space-y-1">
                         <h1 class="text-green-500 bg-green-200 rounded-lg shadow-sm">Pro</h1>
                         @foreach (explode("\r\n", $post->pros) as $pro)
-                            <div class="flex">
+                            <div class="flex mt-2">
                                 <svg class="w-1/4 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -57,7 +57,7 @@
                     <div class="w-1/2 space-y-1 ">
                         <h1 class="text-red-400 bg-red-200 rounded-lg shadow-sm">Contro</h1>
                         @foreach (explode("\r\n", $post->cons) as $con)
-                            <div class="flex">
+                            <div class="flex mt-2">
                                 <svg class="w-1/4 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
