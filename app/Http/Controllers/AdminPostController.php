@@ -36,6 +36,7 @@ class AdminPostController extends Controller
         ]);
     }
 
+
     public function store(StorePostRequest $request)
     {
         $post = new Post;
