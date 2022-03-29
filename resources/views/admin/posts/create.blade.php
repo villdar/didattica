@@ -7,9 +7,11 @@
             <span class="mb-6 text-xs text-gray-600 uppercase">- il nome dello strumento</span>
             {{-- <x-form.input name="slug" required />
                 <span class="mb-6 text-xs text-gray-600 uppercase">- url dello strumento</span> --}}
-            <x-form.input name="thumbnail" type="file" required/>
+            <x-form.input name="thumbnail" type="file" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- immagine dello strumento</span>
-            <x-form.textarea name="excerpt" required/>
+            <x-form.input name="prices" />
+            <span class="mb-6 text-xs text-gray-600 uppercase">- Free, Freemium o Premium</span>
+            <x-form.textarea name="excerpt" required />
             <span class="mb-6 text-xs text-gray-600 uppercase">- percorso didattico dello strumento</span>
             <div class="flex space-x-2">
                 <x-form.textarea cols="60" name="pros" required />

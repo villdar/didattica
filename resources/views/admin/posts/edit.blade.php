@@ -14,7 +14,7 @@
 
                 <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="w-2/4 ml-6 lg:w-2/12 rounded-xl">
             </div>
-
+            <x-form.input name="prices" :value="old('prices', $post->prices)" />
             <x-form.textarea name="excerpt" required>{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
             <div class="flex space-x-1">
                 <x-form.textarea name="pros" cols="60" required>{{ old('pros', $post->pros) }}</x-form.textarea>
@@ -37,10 +37,13 @@
                 <x-form.label name="tags" />
                 <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post" required multiple="multiple" >
                     @foreach ($tags as $tag)
-                        <option value="{{ $tag->id }}" @if (in_array($tag->id, $oldTags))
-                            selected
-                    @endif
-                    >{{ $tag->name }}</option>
+                        <option value="{{ $tag->id }}"
+                            @if (in_array($tag->id, $oldTags))
+                                selected
+                            @endif
+                            >
+                            {{ $tag->name }}
+                        </option>
                     @endforeach
                 </select>
                 <span class="mb-6 text-xs text-gray-600 uppercase">- tags dello strumento</span>
