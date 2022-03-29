@@ -32,13 +32,17 @@
                 </div>
 
 
-
-                <h1 class="text-3xl font-bold lg:text-4xl">
-                    {{ $post->title }}
-                </h1>
+                <div class="flex p-1 space-x-2">
+                    <h1 class="text-3xl font-bold lg:text-4xl">
+                        {{ $post->title }}
+                    </h1>
+                    <span class="text-sm font-semibold text-gray-500 uppercase">{{ $post->prices }}</span>
+                </div>
                 @admin()
                 <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
                 @endadmin
+                <br>
+                <hr>
 
                 <div class="flex p-2 mt-3 mb-8 space-x-4 rounded-lg shadow-lg">
                     <div class="w-1/2 space-y-1">
