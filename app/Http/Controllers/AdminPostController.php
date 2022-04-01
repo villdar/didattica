@@ -84,7 +84,7 @@ class AdminPostController extends Controller
     public function update(UpdatePostRequest $request, Post $post)
     {
         $post->title = $request->title;
-        // $post->slug = Str::slug($request->title);
+        $post->slug = $request->slug;
         $post->body = $request->body;
         $post->user_id = Auth::user()->id;
         $post->category_id = $request->category_id;

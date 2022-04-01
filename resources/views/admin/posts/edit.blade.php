@@ -2,7 +2,7 @@
     <x-setting :heading="'Modifica strumento: ' . $post->title">
         <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
             @csrf
-            @method('POST')
+            @method('PUT')
 
             <x-form.input name="title" :value="old('title', $post->title)" required />
             <x-form.input name="slug" :value="old('slug', $post->slug)" required />
