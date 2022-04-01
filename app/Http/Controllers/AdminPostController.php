@@ -69,7 +69,7 @@ class AdminPostController extends Controller
         // ]));
         // // $post->tags()->saveMany($post->getKey('id'), $request->tags_id);
 
-        return redirect()->route('post.view')->with('success', 'Nuovo strumento aggiunto!');
+        return redirect('/')->with('success', 'Nuovo strumento aggiunto!');
     }
 
     public function edit(Post $post)
