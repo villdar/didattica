@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
-Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::get('posts/{post:slug}', [PostController::class, 'show'])->name('post_view');
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
 
 Route::post('newsletter', NewsletterController::class);

@@ -69,7 +69,7 @@ class AdminPostController extends Controller
         // ]));
         // // $post->tags()->saveMany($post->getKey('id'), $request->tags_id);
 
-        return redirect('/')->with('success', 'Nuovo strumento aggiunto!');
+        return redirect('post_view')->with('success', 'Nuovo strumento aggiunto!');
     }
 
     public function edit(Post $post)
@@ -108,7 +108,7 @@ class AdminPostController extends Controller
         $post->save();
         $post->tags()->sync($request->tags);
 
-        return redirect('/admin/posts')->with('success', 'Strumento modificato!');
+        return redirect('post_view')->with('success', 'Strumento modificato!');
     }
 
     public function destroy(Post $post)
