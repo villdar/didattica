@@ -47,7 +47,7 @@ class AdminPostController extends Controller
         $post->category_id = $request->category_id;
         $post->pros = $request->pros;
         $post->cons = $request->cons;
-        $post->prices = $request->prices;
+        $post->prices = $request('prices', '');
         $post->excerpt = $request->excerpt;
 
         if ($request->hasFile('thumbnail')) {
@@ -90,7 +90,7 @@ class AdminPostController extends Controller
         $post->category_id = $request->category_id;
         $post->pros = $request->pros;
         $post->cons = $request->cons;
-        $post->prices = $request->prices;
+        $post->prices = $request('prices', '');
         $post->excerpt = $request->excerpt;
 
         if ($request->hasFile('thumbnail')) {
