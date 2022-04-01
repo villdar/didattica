@@ -39,7 +39,12 @@
                     <span class="text-sm font-semibold text-gray-500 uppercase">{{ $post->prices }}</span>
                 </div>
                 @admin()
-                <a href="/admin/posts/{{ $post->id }}/edit" class="text-xs text-blue-500 hover:text-blue-600">Modifica</a>
+                <div class="flex w-32 px-4 py-2 mt-4 mr-3 space-x-2 text-xs font-bold text-white uppercase transition-all duration-200 bg-blue-500 rounded-md hover:bg-blue-400">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    </svg>
+                    <a href="/admin/posts/{{ $post->id }}/edit" class="text-sm font-semibold uppercase">Modifica</a>
+                </div>
                 @endadmin
                 <br>
                 <hr>
@@ -50,10 +55,10 @@
                         <div class="p-3 mt-2">
                             @foreach (explode("\r\n", $post->pros) as $pro)
                                 <div class="flex">
-                                    <svg class="w-1/4 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
+                                    <svg class="w-1/12 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="w-3/4 text-sm text-gray-500">
+                                    <span class="w-11/12 mx-1 text-sm text-gray-500">
                                         {{ $pro }}
                                     </span>
                                 </div>
@@ -65,10 +70,10 @@
                         <div class="p-3 mt-2">
                             @foreach (explode("\r\n", $post->cons) as $con)
                                 <div class="flex mt-2">
-                                    <svg class="w-1/4 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
+                                    <svg class="w-1/12 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="w-3/4 text-sm text-gray-500">
+                                    <span class="w-11/12 mx-1 text-sm text-gray-500">
                                         {{ $con }}
                                     </span>
                                 </div>
