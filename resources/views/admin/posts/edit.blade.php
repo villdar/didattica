@@ -15,16 +15,17 @@
                 <img src="{{ asset('storage/thumbnails/' . $post->thumbnail) }}" alt="" class="w-2/4 ml-6 lg:w-2/12 rounded-xl">
             </div>
             <x-form.input name="prices" :value="old('prices', $post->prices)" />
-            <x-form.textarea name="excerpt" >{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
+            <x-form.textarea name="excerpt">{{ old('excerpt', $post->excerpt) }}</x-form.textarea>
             <div class="flex space-x-1">
-                <x-form.textarea name="pros" cols="60" >{{ old('pros', $post->pros) }}</x-form.textarea>
-                <x-form.textarea name="cons" cols="60" >{{ old('cons', $post->cons) }}</x-form.textarea>
+                <x-form.textarea name="pros" cols="60">{{ old('pros', $post->pros) }}</x-form.textarea>
+                <x-form.textarea name="cons" cols="60">{{ old('cons', $post->cons) }}</x-form.textarea>
             </div>
-            <x-form.textarea name="body" >{{ old('body', $post->body) }}</x-form.textarea>
+
+            <x-form.textarea name="body">{{ old('body', $post->body) }}</x-form.textarea>
 
             <x-form.field>
                 <x-form.label name="category" />
-                <select name="category_id" id="category_id" >
+                <select name="category_id" id="category_id">
                     @foreach ($categories as $category)
                         <option
                                 value="{{ $category->id }}"
@@ -35,17 +36,15 @@
             </x-form.field>
             <x-form.field>
                 <x-form.label name="tags" />
-                <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post"  multiple="multiple" >
+                <select class="w-full py-6 js-example-basic-single" name="tags[]" id="create-post" multiple="multiple">
                     @foreach ($tags as $tag)
                         <option value="{{ $tag->id }}"
-                            @if (in_array($tag->id, $oldTags))
-                                selected
-                            @endif
-                            >
+                                @if (in_array($tag->id, $oldTags)) selected @endif>
                             {{ $tag->name }}
                         </option>
                     @endforeach
                 </select>
+                <br>
                 <span class="mb-6 text-xs text-gray-600 uppercase">- tags dello strumento</span>
             </x-form.field>
 
