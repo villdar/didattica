@@ -31,7 +31,7 @@
                             <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<hr></hr>'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
                                 </svg></th>
-                            <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<a href=&quot&quot class=&quot text-blue-600 hover:text-blue400 underline italic&quot></a>'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<a href=&quot&quot class=&quot text-blue-600 hover:text-blue-400 underline italic&quot></a>'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                                 </svg></th>
                             <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<img class=&quot w-1/2 rounded-md border &quot src=&quot&quot />'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
