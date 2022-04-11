@@ -55,10 +55,10 @@
                         <div class="p-3 mt-2 space-y-2">
                             @foreach (explode("\r\n", $post->pros) as $pro)
                                 <div class="flex">
-                                    <svg class="w-1/12 text-green-500" width="50" height="50" fill="none" stroke="currentColor">
+                                    <svg class="text-green-500 md:w-1/12 sm:w-2/12" width="50" height="50" fill="none" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="w-11/12 mx-1 text-lg text-gray-500">
+                                    <span class="mx-1 text-lg text-gray-500 md:w-11/12 sm:w-10/12">
                                         {{ $pro }}
                                     </span>
                                 </div>
@@ -70,10 +70,10 @@
                         <div class="p-3 mt-2 space-y-2">
                             @foreach (explode("\r\n", $post->cons) as $con)
                                 <div class="flex mt-2">
-                                    <svg class="w-1/12 text-red-500" width="50" height="50" fill="none" stroke="currentColor">
+                                    <svg class="text-red-500 md:w-1/12 sm:w-2/12" width="50" height="50" fill="none" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="w-11/12 mx-1 text-lg text-gray-500">
+                                    <span class="mx-1 text-lg text-gray-500 md:w-11/12 sm:w-10/12">
                                         {{ $con }}
                                     </span>
                                 </div>

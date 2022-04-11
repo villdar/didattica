@@ -21,6 +21,8 @@
                 <x-form.textarea name="cons" cols="60">{{ old('cons', $post->cons) }}</x-form.textarea>
             </div>
 
+
+
             <x-form.textarea name="body">{{ old('body', $post->body) }}</x-form.textarea>
 
             <x-form.field>

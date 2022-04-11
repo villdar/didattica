@@ -18,7 +18,7 @@
                 <x-form.textarea cols="60" name="cons" required />
             </div>
             <span class="mb-6 text-xs text-gray-600 uppercase">- pro e contro dello strumento, dividerli andando a capo.</span>
-            <div class="mt-3" x-data="{ text: '' }">
+            <div class="mt-3" x-data="{ text: [] }" x-init="text = ''">
                 <table class="min-w-full p-3 text-base text-gray-500 align-middle bg-gray-100 border-gray-400 border-solid rounded-md">
                     <thead>
                         <tr>
