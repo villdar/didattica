@@ -37,7 +37,7 @@
                             <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<img class=&quot w-1/2 rounded-md border &quot src=&quot&quot />'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                 </svg></th>
-                            <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<ul>\n<li>1</li>\n<li>2</li>\n<li>3</li>\n</ul>'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <th scope="col" class="font-semibold hover:text-black" x-on:click="text += '<div class=&quot p-1 &quot>\n<ul>\n<li>1</li>\n<li>2</li>\n<li>3</li>\n</ul>\n</div>'"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                                 </svg></th>
                         </tr>
