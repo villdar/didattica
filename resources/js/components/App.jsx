@@ -12,10 +12,16 @@ function App(props) {
     const [hide, setHide] = useState('');
     const url = '/category';
 
+    const tags = props.tags;
+
     const categories = props.categories;
 
     const colors = categories.map((category) => (
         category.style
+    ))
+
+    const tag_keys = tags.map(tags => (
+        tags.category_id
     ))
 
     const keys = categories.map(category => (
@@ -24,6 +30,10 @@ function App(props) {
 
     const counts = categories.map(category => (
         category.posts_count
+    ))
+
+    const tag_counts = tags.map(tags => (
+        tags.posts_count
     ))
 
     const style = {
@@ -53,6 +63,17 @@ function App(props) {
 
 
     var matrix = counts.map((el, i) => [...counts].fill(0).fill(el, i, i + 1));
+    var matrix_tag = counts.map((el, i) => [...tag_counts].fill(0).fill(el, i, i + 1));
+
+    if (matrix.length !== matrix_tag.length || matrix[0].length !== matrix_tag[0].length) {
+    throw new Error('Le dimensioni delle matrici non corrispondono');
+    }
+
+    var combinedMatrix = matrix.map((row, i) =>
+        row.map((cell, j) => cell + matrix_tag[i][j])
+    );
+
+    console.log(combinedMatrix);
 
     function hideOnClick(id) {
       setHide({value: id})
@@ -101,7 +122,7 @@ function App(props) {
       <StyleRoot>
         <div className="App">
             <div style={style}>
-                <Chord hideOnClick={hideOnClick} keys={keys} colors={colors} matrix={matrix}/>
+                <Chord hideOnClick={hideOnClick} keys={tag_keys} colors={colors} matrix={combinedMatrix}/>
             </div>
         </div>
       </StyleRoot>
