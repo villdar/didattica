@@ -134,9 +134,9 @@
             </div>
         </nav>
         {{ $slot }}
-        @auth
+{{--         @auth
             <x-support-bubble />
-        @endauth
+        @endauth --}}
 
         <footer id="newsletter"
                 class="px-10 py-16 mt-16 text-center bg-gray-100 border border-black border-opacity-5 rounded-xl">
