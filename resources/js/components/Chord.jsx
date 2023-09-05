@@ -5,10 +5,10 @@ import { ResponsiveChord } from '@nivo/chord';
 
 function Chord(props) {
 
-  const Chord = ({ combinedMatrix, onClick, tag_keys, colors }) => (
+  const Chord = ({ matrix, onClick, keys, colors }) => (
     <ResponsiveChord
-      matrix={combinedMatrix}
-      keys={tag_keys}
+      matrix={matrix}
+      keys={keys}
       margin={{ top: 30, right: 60, bottom: 60, left: 60 }}
       valueFormat="0"
       padAngle={0.02}
