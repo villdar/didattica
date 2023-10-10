@@ -3,15 +3,18 @@
 
 Didattic@ is a web application developed using the Laravel framework for the backend and React for the frontend,
 with the aim of providing a comprehensive resource for learning and effectively utilizing digital tools in education.
-The application offers guides and resources organized based on the type of educational activity teachers intend to perform, making it easier to choose the most suitable tools.
+The application offers guides and resources organized based on the type of educational activity teachers intend to perform,
+making it easier to choose the most suitable tools.
 
 The website is hosted on [suffp-didattica.com](https://suffp-didattica.com/).
 
 ## Features
 
 - **Comprehensive Guide**: A variety of detailed guides for using digital tools for education.
-- **Intuitive Organization**: Resources are intuitively organized based on the type of educational activity, making it simple for teachers to find what they need.
-- **Graphical Representation**: Utilizes the Nivo-chord library to provide intuitive graphical representations of the correlations between different tools and educational activities.
+- **Intuitive Organization**: Resources are intuitively organized based on the type of educational activity,
+    making it simple for teachers to find what they need.
+- **Graphical Representation**: Utilizes the Nivo-chord library to provide intuitive
+    graphical representations of the correlations between different tools and educational activities.
 
 ## Technologies Used
 
@@ -21,7 +24,8 @@ The website is hosted on [suffp-didattica.com](https://suffp-didattica.com/).
 
 ## Installation and Configuration
 
-Ensure that you have the latest versions of Laravel, React, and the Nivo-chord library installed on your machine.
+Ensure that you have the latest versions of Laravel, React,
+and the Nivo-chord library installed on your machine.
 
 1. Clone the repository:
 ```bash
