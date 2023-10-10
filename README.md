@@ -1,7 +1,9 @@
 ```markdown
 # Didattic@
 
-Didattic@ is a web application developed using the Laravel framework for the backend and React for the frontend, with the aim of providing a comprehensive resource for learning and effectively utilizing digital tools in education. The application offers guides and resources organized based on the type of educational activity teachers intend to perform, making it easier to choose the most suitable tools.
+Didattic@ is a web application developed using the Laravel framework for the backend and React for the frontend,
+with the aim of providing a comprehensive resource for learning and effectively utilizing digital tools in education.
+The application offers guides and resources organized based on the type of educational activity teachers intend to perform, making it easier to choose the most suitable tools.
 
 The website is hosted on [suffp-didattica.com](https://suffp-didattica.com/).
 
